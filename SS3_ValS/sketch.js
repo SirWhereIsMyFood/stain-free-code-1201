@@ -98,6 +98,20 @@ function draw ()
   fill (lineFill);
   stroke (0);
   line (lineX, lineY, lineX * 1.5, lineY);
+
+  let r2 = 10;
+  let g2 = 10;
+  let b2 = 10;
+
+  if (mouseIsPressed)
+  {
+    
+  }
+
+  if (mouseX > 310)
+  {
+  buttonFill (random(100, 200));
+  }
 }
 
 function mousePressed ()
