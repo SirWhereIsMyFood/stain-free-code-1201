@@ -19,20 +19,39 @@ let r = 225;
 let g = 209;
 let b = 97;
         // declaring variables. \\
-let r2
+let r2;
 let b2;
 let g2;
+
+let vendingxlocation = 190;
+let vendingylocation = 430;
+let squarexlocation = 200;
+let squareylocation = 425;
+
+let quadC = ['130', '96', '88'];
 
 function setup()
 {
 
   createCanvas (500, 500); // SETUP CANVAS. \\
+  rectMode (CENTER);
+  background (220);
 
 }
 
 function draw ()
 {
 
+  background (r, g, b);  
 
+  fill (quadC);
+  quad (0, 450, 500, 450, 501, 500, 0, 500);
+
+  fill (0, 0, 0, 300);
+  square (squarexlocation, squareylocation, 50);
+  square (squarexlocation + 75, squareylocation, 50);
+
+  fill (10, 10, 10);
+  rect ()
 
 }
