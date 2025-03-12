@@ -41,13 +41,14 @@ let lineY = 225;
 
 let xMove = 0;
 let yMove = 0;
+let pace;
 
 let quadFill = ['130', '96', '88'];
 let squareFill = ['0', '0', '0', '300'];
 let vendingFill = ['10', '10', '10'];
 let panelFill = ['200', '200', '245'];
 let signFill = ['255', '255', '255', '256'];
-let buttonFill = ['226', '226', '226'];
+let buttonFill = [226, 226, 226];
 let ellipseFill = ['200', '0', '0'];
 let lineFill = ['0', '0', '0'];
 
@@ -103,26 +104,92 @@ function draw ()
   let g2 = 10;
   let b2 = 10;
 
-  if (mouseIsPressed)
+  if (mouseX <= 325)
   {
-    
+  buttonFill[0] = random(20, 170);
+  buttonFill[1] = random(15, 190);
+  buttonFill[2] = random(20, 166);
   }
 
-  if (mouseX > 310)
+  if (keyIsDown(LEFT_ARROW))
   {
-  buttonFill (random(100, 200));
+    ellipseX--;
   }
+
+  if (ellipseX < 0)
+  {
+
+    lineX - 50 * 2;
+
+    fill (255, 244, 0);
+    stroke (0);
+    strokeWeight (5);
+    triangle (40, 250, 110, 250, 75, 200);
+
+    noStroke();
+    let eye = [255];
+    fill (eye);
+    ellipse (75, 225, 10, 30);
+    
+    let pupil = [10];
+    fill (pupil);
+    ellipse (75, 225, 5, 15);
+
+    stroke (0);
+    strokeWeight(3);
+    line (65, 200, 85, 200);
+    square (75, 195, 10);
+    noStroke();
+    print ('there is no going back now.');
+
+  }
+
+  if (r < 101)
+    {
+
+      r = 225;
+      g = 209;
+      b = 97;
+
+    }
+
+    if (g > 98)
+    {
+
+      r - r2/2 * random(3);
+      g + g2/2 * random(5);
+      b - b2/ random(3);
+
+    }
+
+    if (b > 250)
+    {
+
+      ellipseX - 75;
+
+    }
+
+    if
+
 }
 
 function mousePressed ()
 {
 
+  r = random (100, 200);
+  g = random (0, 100);
+  b = random (200, 255);
 
 }
 
 function keyPressed ()
 {
-  
+  if (key === 'a')
+  {
+    ellipseFill[0] = random(255);
+    ellipseFill[1] = random(255);
+    ellipseFill[2] = random(255);
+  }
 
 
 }
