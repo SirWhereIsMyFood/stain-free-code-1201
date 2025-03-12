@@ -42,13 +42,13 @@ let signylocation = 225;
 
 let ellipseX = 75;
 let ellipseY = 225;
+let ellipseIf= 75
 
 let lineX = 60;
 let lineY = 225;
 
-let xMove = 0;
-let yMove = 0;
-let pace;
+let expand = 0.5;
+let freeze = false
 
 let quadFill = ['130', '96', '88'];
 let squareFill = ['0', '0', '0', '300'];
@@ -147,7 +147,7 @@ function draw ()
     line (65, 200, 85, 200);
     square (75, 195, 10);
     noStroke();
-    print ('there is no going back now.');
+    print ("there is no going back now.");
 
   }
 
@@ -179,8 +179,20 @@ function draw ()
     if (ellipseFill[2] > 200)
     {
 
-      ellipse (100, 400, width/2, height/2)
+      
+      ellipse (ellipseIf - 76, 400, expand, expand);
+      ellipseX++;
+      ellipseIf++;
+      expand ++;
 
+      print ("the black hole is coming..");
+
+      if (ellipseX > 500)
+      {
+        ellipseX = 75
+        ellipseX--;
+        
+      }
     }
 
 }
