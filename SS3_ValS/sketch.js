@@ -13,6 +13,13 @@ with this.
 
 CONTROLS:
 
+MOUSE BUTTON / TRACKPAD (PRESSED)
+A to change color of ellipse
+LEFT ARROW to move ellipse
+
+But also hover your mouse around to see some other thing(s).
+
+
 */
 
 let r = 225;
@@ -169,7 +176,12 @@ function draw ()
 
     }
 
-    if
+    if (ellipseFill[2] > 200)
+    {
+
+      ellipse (100, 400, width/2, height/2)
+
+    }
 
 }
 
