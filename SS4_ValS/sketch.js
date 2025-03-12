@@ -54,6 +54,7 @@ let slotFill = ['200', '200', '245'];
 // ALL FROM SS3 \\
 
 let spam;
+let cipher;
 let foodX = 240;
 let foodY = 400;
 
@@ -70,6 +71,7 @@ function preload ()
 {
 
   spam = loadImage ("img/SPAM.PNg");
+  cipher = loadImage ("img/PNGCipher.png");
 
 }
 
@@ -134,6 +136,8 @@ function draw ()
 
   currentTime = millis();
 
+  // image (cipher, 75, 225, width/6, height/6); \\
+
   // image (spam, 200, 200, width/5, height/5); \\
 
   if (mouseX <= 325)
@@ -184,7 +188,8 @@ function draw ()
     {
 
       print ("9 SECS PASSED.");
-      text ("BUT I GUESS YOU CAN SNACK ON MY SPAM.", 100, 100, width/5, height/5);
+      text ("BUT I GUESS YOU CAN SNACK ON SOME SPAM.", 100, 100, width/5, height/5);
+      image (cipher, 75, 225, width/6, height/6);
       image (spam, 240, 400, width/10, height/10);
     }
 
