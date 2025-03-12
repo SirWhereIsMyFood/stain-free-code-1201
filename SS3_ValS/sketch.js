@@ -49,6 +49,7 @@ let lineY = 225;
 
 let expand = 0.5;
 let freeze = false
+let move = 0
 
 let quadFill = ['130', '96', '88'];
 let squareFill = ['0', '0', '0', '300'];
@@ -110,6 +111,8 @@ function draw ()
   let r2 = 10;
   let g2 = 10;
   let b2 = 10;
+
+  ellipseX += move
 
   if (mouseX <= 325)
   {
@@ -189,8 +192,10 @@ function draw ()
 
       if (ellipseX > 500)
       {
+        
+        freeze = true
         ellipseX = 75
-        ellipseX--;
+        ellipseX = -move;
         
       }
     }
