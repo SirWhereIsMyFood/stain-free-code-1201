@@ -18,11 +18,15 @@
 let state = preScene; /* I'm adding my scenes here */
 
 /* Loading fonts */
+let font;
+let italicfont;
 
 
 function preload ()
 {
 
+  /* Loaded fonts below here. */
+  font = 
 
 
 }
