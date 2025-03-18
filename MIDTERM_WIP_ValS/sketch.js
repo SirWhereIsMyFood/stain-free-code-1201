@@ -11,6 +11,9 @@
 
   As I said in my other sketches, I'm just playing arround with things here & there.
 
+  SOURCES:
+  monogram fonts - https://datagoblin.itch.io/monogram
+
   CONTROLS:
 
 */
@@ -19,14 +22,15 @@ let state = preScene; /* I'm adding my scenes here */
 
 /* Loading fonts */
 let font;
-let italicfont;
+let ifont;
 
 
 function preload ()
 {
 
   /* Loaded fonts below here. */
-  font = 
+  font = loadFont ("fonts/monogram-extended.ttf");
+  ifont = loadFont ("fonts/monogram-extended-italic.ttf");
 
 
 }
