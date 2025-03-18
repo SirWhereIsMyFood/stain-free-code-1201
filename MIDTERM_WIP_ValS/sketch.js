@@ -52,11 +52,15 @@ function draw()
   {
     preScene ();
   }
+  else if (state == "controls")
+  {
+    controls ();
+  }
   else if (state == "scene")
   {
     scene ();
   }
-  else if (state == "sceneover")
+  else if (state == "scene over")
   {
     sceneOver ();
   }
@@ -65,12 +69,35 @@ function draw()
 
 }
 
+function mousePressed ()
+{
+  if (state == "prescene")
+  {
+    state = "controls";
+  }
+  else if (state == "scene over")
+  {
+    state = "prescene";
+  }
+}
+
+
 function preScene ()
+{
+
+  background (r, g, b);
+  textSize (100);
+  textFont (myFont);
+  text ('CLICK TO PROCEED!', width/2, height/2, width/2, height/2);
+
+}
+
+function controls ()
 {
 
   background (r, g, b);
   textSize (50);
   textFont (myFont);
-  text ('jello!', 300, 300, width/2, height/2);
+  text ("you're walking", width/2, height/2, width/2, height/2);
 
 }
