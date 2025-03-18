@@ -21,16 +21,22 @@
 let state = preScene; /* I'm adding my scenes here */
 
 /* Loading fonts */
-let font;
+let myFont;
 let ifont;
+
+/* Loading R G B values */
+let r = 225;
+let g = 209;
+let b = 97;
 
 
 function preload ()
 {
 
   /* Loaded fonts below here. */
-  font = loadFont ("fonts/monogram-extended.ttf");
-  ifont = loadFont ("fonts/monogram-extended-italic.ttf");
+  myFont = loadFont ('fonts/monogram.ttf');
+  ifont = loadFont ('fonts/monogramItalic.ttf');
+  
 
 
 }
@@ -39,13 +45,16 @@ function setup()
 {
 
   createCanvas (1000, 1000);
+  background (225, 209, 97);
   rectMode (CENTER);
   textAlign (CENTER);
-  textSize (20);
+  textSize (10);
 
 }
 
 function draw() 
 {
-  background(220);
+
+  fill (100, 0, 0);
+
 }
