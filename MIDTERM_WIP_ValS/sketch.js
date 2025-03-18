@@ -18,7 +18,7 @@
 
 */
 
-//let state = preScene; /* I'm adding my scenes here */
+let state = "prescene"; /* I'm adding my scenes here */
 
 /* Font Variable(s) */
 let myFont;
@@ -38,7 +38,6 @@ function setup()
 {
 
   createCanvas (1000, 1000);
-  background (r, g, b);
   rectMode (CENTER);
   textAlign (CENTER);
   textSize (10);
@@ -48,8 +47,26 @@ function setup()
 function draw() 
 {
 
-  fill (100, 0, 0);
-  textFont (myFont);
-  text ('test', width/2, height/2, width/3, height/3);
+  if (state == "prescene")
+  {
+    preScene ();
+  }
+  else if (state == "scene")
+  {
+    scene ();
+  }
+  else if (state == "sceneover")
+  {
+    sceneOver ();
+  }
+
+  print (state);
+
+}
+
+function preScene ()
+{
+
+  background (r, g, b);
 
 }
