@@ -82,7 +82,7 @@ function mousePressed ()
 }
 
 
-function preScene ()
+function preScene () /* The starting point for the game, so people can click to procees, quite literally what it says. */
 {
 
   background (r, g, b);
@@ -92,12 +92,12 @@ function preScene ()
 
 }
 
-function controls ()
+function controls () /* Second scene after the starting scene, where it explains the sypnosis and controls. */
 {
 
   background (r, g, b);
-  textSize (50);
+  textSize (35);
   textFont (myFont);
-  text ("you're walking", width/2, height/2, width/2, height/2);
+  text ("You're just trying to get a snack from the vending machine, in the cafeteria. But why is there a funny feeling about this? And why are you here alone? Couldn't you just bring your own food?", width/2, height/2, width/2, height/2);
 
 }
