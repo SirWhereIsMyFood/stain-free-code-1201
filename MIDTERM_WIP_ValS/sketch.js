@@ -11,6 +11,8 @@
 
   As I said in my other sketches, I'm just playing arround with things here & there.
 
+  Inspired by the game "Make Good Choices".
+
   SOURCES:
   monogram fonts - https://datagoblin.itch.io/monogram
 
@@ -40,7 +42,6 @@ function setup()
   createCanvas (1000, 1000);
   rectMode (CENTER);
   textAlign (CENTER);
-  textSize (10);
 
 }
 
@@ -68,5 +69,8 @@ function preScene ()
 {
 
   background (r, g, b);
+  textSize (50);
+  textFont (myFont);
+  text ('jello!', 300, 300, width/2, height/2);
 
 }
