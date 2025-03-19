@@ -172,6 +172,11 @@ function scene ()
   fill (0);
   ellipse (100, 100, 100, 100);
 
-  
+  /* Rebuilding our vending machine scenario 
+
+  Starting with the floor. */
+
+  quad ()
+
 
 }
