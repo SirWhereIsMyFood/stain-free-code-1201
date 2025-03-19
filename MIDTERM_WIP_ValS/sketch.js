@@ -33,12 +33,14 @@ let b = 97;
 
 let currentTime;
 
-let vendingxlocation = 235; // 400 \\
-let vendingylocation = 275; // 430 \\
+let vendingxlocation = 235;
+let vendingylocation = 275;
 let squarexlocation = 200;
 let squareylocation = 425;
 let buttonx = 305;
 let buttony = 300;
+let windowx = 200;
+let windowy = 200;
 
 let signxlocation = 75;  
 let signylocation = 225;
@@ -175,8 +177,20 @@ function scene ()
   /* Rebuilding our vending machine scenario 
 
   Starting with the floor. */
+  push ();
+  fill (quadFill);
+  stroke (0);
+  strokeWeight (5);
+  quad (50, 800, 950, 800, 1000, 1000, 0, 1000);
+  pop ();
 
-  quad ()
+  /* Moving onto the window. */
+  noFill ();
+  stroke (0);
+  strokeWeight (5);
+  rect (200, 200, width/5, height/5);
+
+  /* And now the vending machine legend itself. */
 
 
 }
