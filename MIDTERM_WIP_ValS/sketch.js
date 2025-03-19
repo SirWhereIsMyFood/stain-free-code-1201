@@ -198,12 +198,17 @@ function scene ()
   fill (vendingFill);
   rect (vendingxlocation, vendingylocation, width/4, height/2.25);
   fill (panelFill);
-  rect (vendingxlocation - 15, vendingylocation - 20, width/5, height/3);
+  rect (vendingxlocation - 15, vendingylocation - 20, width/5.5, height/3);
 
-  /* second vending machine */
+  /* second vending machine on the right */
   fill (squareFill);
-  square ();
-  square ();
+  square (squarexlocation + 350, squareylocation, 75);
+  square (squarexlocation + 500, squareylocation, 75);
+
+  fill (vendingFill);
+  rect (vendingxlocation + 350, vendingylocation, width/4, height/2.25);
+  fill (panelFill)
+  rect (vendingxlocation + 335, vendingylocation -20, width/5.5, height/3);
 
 
 
