@@ -25,9 +25,12 @@ let state = "prescene"; /* I'm adding my scenes here */
 /* Font Variable(s) */
 let myFont;
 
+/* background variables */
 let r = 225;
 let g = 209;
 let b = 97;
+
+/* timer variables */
 
 function preload()
 {
