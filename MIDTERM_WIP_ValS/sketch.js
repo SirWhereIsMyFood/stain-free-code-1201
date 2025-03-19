@@ -15,6 +15,7 @@
 
   SOURCES:
   monogram fonts - https://datagoblin.itch.io/monogram
+  fade animation text - https://editor.p5js.org/remarkability/sketches/rtM08miUD
 
   CONTROLS:
 
@@ -31,6 +32,32 @@ let g = 209;
 let b = 97;
 
 let currentTime;
+
+let vendingxlocation = 235; // 400 \\
+let vendingylocation = 275; // 430 \\
+let squarexlocation = 200;
+let squareylocation = 425;
+let buttonx = 305;
+let buttony = 300;
+
+let signxlocation = 75;  
+let signylocation = 225;
+
+let ellipseX = 75;
+let ellipseY = 225;
+
+let lineX
+let lineY
+
+let quadFill = [130, 96, 88];
+let squareFill = [0, 0, 0, 300];
+let vendingFill = [10, 10, 10];
+let panelFill = [200, 200, 245];
+let signFill = [255, 255, 255, 256];
+let buttonFill = [226, 226, 226];
+let ellipseFill = [200, 0, 0];
+let lineFill = [0, 0, 0];
+let slotFill = [200, 200, 245];
 
 function preload()
 {
@@ -125,15 +152,26 @@ function controls () /* Second scene after the starting scene, where it explains
 
   if (currentTime > timer2)
   {
-
+    state = "scene";
   }
   else if (currentTime > timer1)
   {
-    fade = -fade;
-    fill (0);
-    ellipse (100, 100, 100, 100);
+    if (opacity > 255 || opacity < 0)
+    {
+      fade = fade - 10;
+    }
   }
 
   print ("currentTime =" + currentTime);
+
+}
+
+function scene ()
+{
+
+  fill (0);
+  ellipse (100, 100, 100, 100);
+
+  
 
 }
