@@ -35,8 +35,8 @@ let currentTime;
 
 let vendingxlocation = 235;
 let vendingylocation = 275;
-let squarexlocation = 200;
-let squareylocation = 425;
+let squarexlocation = 425;
+let squareylocation = 800;
 let buttonx = 305;
 let buttony = 300;
 let windowx = 200;
@@ -191,6 +191,8 @@ function scene ()
   rect (200, 200, width/5, height/5);
 
   /* And now the vending machine legend itself. */
-
+  fill (squareFill);
+  square (squarexlocation, squareylocation, 75);
+  square (squarexlocation + 150, squareylocation, 75);
 
 }
