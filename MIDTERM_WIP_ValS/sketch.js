@@ -98,6 +98,11 @@ function controls () /* Second scene after the starting scene, where it explains
   background (r, g, b);
   textSize (35);
   textFont (myFont);
-  text ("You're just trying to get a snack from the vending machine, in the cafeteria. But why is there a funny feeling about this? And why are you here alone? Couldn't you just bring your own food?", width/2, height/2, width/2, height/2);
+  text ("You're just trying to get a snack from the vending machine, in the cafeteria. But why is there a funny feeling about this? And why are you here alone? Couldn't you just bring your own food?", 500, 300, width/2, height/2);
 
+  textSize (50);
+  stroke(0);
+  strokeWeight (5);
+  text ("C O N T R O L S", width/2, height/2, width/2, height/4);
+  noStroke();
 }
