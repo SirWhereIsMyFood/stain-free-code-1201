@@ -103,18 +103,25 @@ function controls () /* Second scene after the starting scene, where it explains
   let timer1 = 5000 ;
   let timer2 = 10000;
 
+  /* text motion variables */
+  let opacity = 0;
+  let fade = 1;
+
   currentTime = millis();
 
   background (r, g, b);
   textSize (35);
   textFont (myFont);
+  fill (opacity);
   text ("You're just trying to get a snack from the vending machine, in the cafeteria. But why is there a funny feeling about this? And why are you here alone? Couldn't you just bring your own food?", 500, 300, width/2, height/2);
 
   textSize (50);
   stroke(0);
   strokeWeight (5);
+  fill (opacity);
   text ("C O N T R O L S", width/2, height/2, width/2, height/4);
   noStroke();
+  opacity = opacity + fade;
 
   if (currentTime > timer2)
   {
@@ -122,8 +129,11 @@ function controls () /* Second scene after the starting scene, where it explains
   }
   else if (currentTime > timer1)
   {
-    
+    fade = -fade;
+    fill (0);
+    ellipse (100, 100, 100, 100);
   }
 
+  print ("currentTime =" + currentTime);
 
 }
