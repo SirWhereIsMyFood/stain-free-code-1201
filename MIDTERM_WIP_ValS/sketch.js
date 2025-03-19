@@ -32,6 +32,22 @@ let r = 225;
 let g = 209;
 let b = 97;
 
+/* image variables */
+let SPAM;
+let tuna;
+let bill;
+let water;
+let hand;
+let poison;
+
+let SPAMx = 475;
+let SPAMy = 600;
+
+/* text motion variables */
+  let opacity = 0;
+  let fade = 1;
+  let strokefade = 5
+
 let currentTime;
 
 let vendingxlocation = 500;
@@ -66,6 +82,13 @@ function preload()
 {
 
   myFont = loadFont ('font/monogram.ttf');
+
+  SPAM = loadImage ("img/SPAM.png");
+  tuna = loadImage ("img/Tunacan.png");
+  bill = loadImage ("img/PNGCipher.png");
+  water = loadImage ("img/BottledWater.png");
+  hand = loadImage ("img/HandWater.png");
+  poison = loadImage ("img/BottledPoison.png");
 
 }
 
@@ -130,12 +153,8 @@ function controls () /* Second scene after the starting scene, where it explains
 
   /* timer variables */
   let currentTime = 0;
-  let timer1 = 5000 ;
+  let timer1 = 8000 ;
   let timer2 = 10000;
-
-  /* text motion variables */
-  let opacity = 0;
-  let fade = 1;
 
   currentTime = millis();
 
@@ -147,7 +166,7 @@ function controls () /* Second scene after the starting scene, where it explains
 
   textSize (50);
   stroke(0);
-  strokeWeight (5);
+  strokeWeight (strokefade);
   fill (opacity);
   text ("C O N T R O L S", width/2, height/2, width/2, height/4);
   noStroke();
@@ -159,9 +178,10 @@ function controls () /* Second scene after the starting scene, where it explains
   }
   else if (currentTime > timer1)
   {
-    if (opacity > 255 || opacity < 0)
+    if (opacity > 255)
     {
-      fade = fade - 10;
+      fade = fade - 0.5;
+      strokefade = strokefade - 1
     }
   }
 
@@ -211,6 +231,13 @@ function scene ()
   fill (panelFill)
   rect (vendingxlocation + 335, vendingylocation -20, width/5.5, height/3);
 
+  /* I want to station my products in the machines. */
 
+  image (SPAM, SPAMx, SPAMy, width/10, height/10);
 
+  if (mouseIsPressed===true)
+  {
+    SPAMx = mouseX;
+    SPAMy = mouseY;
+  }
 }
