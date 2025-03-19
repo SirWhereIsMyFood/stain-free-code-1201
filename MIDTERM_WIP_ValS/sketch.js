@@ -30,7 +30,7 @@ let r = 225;
 let g = 209;
 let b = 97;
 
-/* timer variables */
+let currentTime;
 
 function preload()
 {
@@ -98,6 +98,13 @@ function preScene () /* The starting point for the game, so people can click to 
 function controls () /* Second scene after the starting scene, where it explains the sypnosis and controls. */
 {
 
+  /* timer variables */
+  let currentTime = 0;
+  let timer1 = 5000 ;
+  let timer2 = 10000;
+
+  currentTime = millis();
+
   background (r, g, b);
   textSize (35);
   textFont (myFont);
@@ -108,4 +115,15 @@ function controls () /* Second scene after the starting scene, where it explains
   strokeWeight (5);
   text ("C O N T R O L S", width/2, height/2, width/2, height/4);
   noStroke();
+
+  if (currentTime > timer2)
+  {
+
+  }
+  else if (currentTime > timer1)
+  {
+    
+  }
+
+
 }
