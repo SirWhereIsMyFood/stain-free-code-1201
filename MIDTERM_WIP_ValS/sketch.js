@@ -16,6 +16,7 @@
   SOURCES:
   monogram fonts - https://datagoblin.itch.io/monogram
   fade animation text - https://editor.p5js.org/remarkability/sketches/rtM08miUD
+  clcking on objects - The Coding Train "7.6: Clicking on Objects - p5.js Tutorial" URL: https://www.youtube.com/watch?v=DEHsr4XicN8&t=265s
 
   CONTROLS:
 
