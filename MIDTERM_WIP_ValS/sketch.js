@@ -33,8 +33,8 @@ let b = 97;
 
 let currentTime;
 
-let vendingxlocation = 235;
-let vendingylocation = 275;
+let vendingxlocation = 500;
+let vendingylocation = 575;
 let squarexlocation = 425;
 let squareylocation = 800;
 let buttonx = 305;
@@ -181,7 +181,7 @@ function scene ()
   fill (quadFill);
   stroke (0);
   strokeWeight (5);
-  quad (50, 800, 950, 800, 1000, 1000, 0, 1000);
+  quad (25, 800, 975, 800, 1000, 1000, 0, 1000);
   pop ();
 
   /* Moving onto the window. */
@@ -194,5 +194,17 @@ function scene ()
   fill (squareFill);
   square (squarexlocation, squareylocation, 75);
   square (squarexlocation + 150, squareylocation, 75);
+
+  fill (vendingFill);
+  rect (vendingxlocation, vendingylocation, width/4, height/2.25);
+  fill (panelFill);
+  rect (vendingxlocation - 15, vendingylocation - 20, width/5, height/3);
+
+  /* second vending machine */
+  fill (squareFill);
+  square ();
+  square ();
+
+
 
 }
