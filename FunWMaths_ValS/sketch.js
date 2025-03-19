@@ -1,12 +1,12 @@
-let amplitude = 150;
-let frequency = 0.05;
-let xPos = 0;
-let yPos = 0;
-let xPrev = 0;
-let yPrev;
-let offset;
-let amount;
-let r;
+let amplitude = 150; /* How high/low the circle goes */
+let frequency = 0.05; /* How often/frequent the circle moves in a different direction */
+let xPos = 0; /* X-position is set to 0, left side of canvas */
+let yPos = 0; /* Y-position is set to 0, left side of canvas */
+let xPrev = 0; /* Previous x position/value */
+let yPrev; /* Previous y position/value */
+let offset; /* Retrieves current value */
+let amount; /* Amount of something */
+let r; /* Background variables */
 let g;
 let b;
 
@@ -16,8 +16,8 @@ function setup()
 	strokeWeight(2);
 	fill(255, 255, 255, 50);
 	
-	offset = height/2;
-	yPrev = height/2;
+	offset = height/2; /* Offset is 250 */
+	yPrev = height/2; /* Previous Y-pos is 250 */
 }
 
 function draw() 
@@ -26,7 +26,7 @@ function draw()
 	g = map(xPos, 0, width, 0, 255);
 	b = map(xPos, 0, width, 255, 0);
 	
-	background(r, g, b, 5);
+	background(r, g, b, 5); 
 
 	lerpAmount = map(mouseY, 0, height, 0.2, 0.9);
 	
@@ -47,6 +47,6 @@ function draw()
 	if (xPos > width)
 	{
 		xPos = 0;
-		xPrev = xPos;
+		xPrev = xPos; /* Returns position back to first value */
 	}
 }
