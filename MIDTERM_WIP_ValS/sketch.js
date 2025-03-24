@@ -153,8 +153,7 @@ function controls () /* Second scene after the starting scene, where it explains
 
   /* timer variables */
   let currentTime = 0;
-  let timer1 = 8000 ;
-  let timer2 = 10000;
+  let timer1 = 10000 ;
 
   currentTime = millis();
 
@@ -172,17 +171,9 @@ function controls () /* Second scene after the starting scene, where it explains
   noStroke();
   opacity = opacity + fade;
 
-  if (currentTime > timer2)
+  if (currentTime > timer1)
   {
-    state = "scene";
-  }
-  else if (currentTime > timer1)
-  {
-    if (opacity > 255)
-    {
-      fade = fade - 0.5;
-      strokefade = strokefade - 1
-    }
+    text
   }
 
   print ("currentTime =" + currentTime);
