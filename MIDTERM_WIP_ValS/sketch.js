@@ -167,13 +167,15 @@ function controls () /* Second scene after the starting scene, where it explains
   stroke(0);
   strokeWeight (strokefade);
   fill (opacity);
-  text ("C O N T R O L S", width/2, height/2, width/2, height/4);
+  text ("C O N T R O L S", width/2, height/2, width/2, height/5);
   noStroke();
   opacity = opacity + fade;
 
   if (currentTime > timer1)
   {
-    text
+    textFont (myFont);
+    textSize (30);
+    text ("P R E S S  S P A C E  T O  C O N T I N U E", width/2, height/2, width/2, height/3);
   }
 
   print ("currentTime =" + currentTime);
