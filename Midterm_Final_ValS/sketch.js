@@ -22,7 +22,8 @@
 
 */
 
-let state = "prescene"; /* I'm adding my scenes here */
+let state = "controls"; /* I'm adding my scenes here */
+let scene = 0;
 
 /* Font Variable(s) */
 let myFont;
@@ -104,17 +105,13 @@ function setup()
 function draw() 
 {
 
-  if (state == "prescene")
-  {
-    preScene ();
-  }
-  else if (state == "controls")
+  if (state == "controls")
   {
     controls ();
   }
-  else if (state == "scene")
+  else if (state == "game")
   {
-    scene ();
+    game ();
   }
   else if (state == "scene over")
   {
@@ -135,6 +132,13 @@ function mousePressed ()
   {
     state = "prescene";
   }
+}
+
+function keyPressed ()
+{
+
+
+  
 }
 
 
@@ -240,11 +244,4 @@ function scene ()
     SPAMx = mouseX;
     SPAMy = mouseY;
   }
-}
-
-function keyPressed ()
-{
-
-
-  
 }
