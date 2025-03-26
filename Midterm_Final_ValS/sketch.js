@@ -249,6 +249,11 @@ function game ()
   text ("1", 200, 150, width/5, height/5);
   text ("2", 800, 150, width/5, height/5);
 
+  text ("F", 200, 450, width/5, height/5);
+  text ("D", 800, 450, width/5, height/5);
+
+  text ("R TO RETURN BACK", 200, 950, width/5, height/5);
+
   image (dispFOOD[whatFOOD], 200, 200, width/6, height/6);
   image (dispDRINK[whatDRINK], 800, 200, width/6, height/6);
 
@@ -285,15 +290,6 @@ function keyPressed ()
   {
     whatFOOD = int(random(dispFOOD.length));
 
-    let currentTime = 0;
-    let firstTimer = 2000;
-    currentTime = millis();
-
-    if (currentTime > firstTimer)
-    {
-      
-      text ("f", 200, 450, width/5, height/5)
-    }
   }
 
   if (key == "2")
@@ -301,12 +297,12 @@ function keyPressed ()
     whatDRINK = int(random(dispDRINK.length));
   }
 
-  if (key == "f" && state == "game")
+  if (key == "F" && state == "game")
   {
     image (food(random(0, 2)), 475, 600, width/10, height/10);
   }
 
-  if (key == "d" && state == "game")
+  if (key == "D" && state == "game")
   {
     image (drink)
   }
