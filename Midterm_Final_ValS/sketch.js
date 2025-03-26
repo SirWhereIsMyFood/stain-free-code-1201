@@ -150,13 +150,9 @@ function draw()
 
 function mousePressed ()
 {
-  if (state == "prescene")
+  if (state == "scene over")
   {
     state = "controls";
-  }
-  else if (state == "scene over")
-  {
-    state = "prescene";
   }
 }
 
@@ -177,8 +173,8 @@ function preScene () /* The starting point for the game, so people can click to 
   text ('CLICK TO PROCEED!', width/2, height/2, width/2, height/2);
 
 }
-
-function controls () /* Second scene after the starting scene, where it explains the sypnosis and controls. */
+                      /* The starting point for the game, has a cooldown time to procees. */
+function controls () /* Scene leads to explanation of the sypnosis and controls. */
 {
 
   /* timer variables */
