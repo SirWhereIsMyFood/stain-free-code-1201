@@ -163,19 +163,13 @@ function keyPressed ()
   
 }
 
-
-function preScene () /* The starting point for the game, so people can click to procees, quite literally what it says. */
+                      /* The starting point for the game, has a cooldown time to procees. */
+function controls () /* Scene leads to explanation of the sypnosis and controls. */
 {
-
   background (r, g, b);
   textSize (100);
   textFont (myFont);
   text ('CLICK TO PROCEED!', width/2, height/2, width/2, height/2);
-
-}
-                      /* The starting point for the game, has a cooldown time to procees. */
-function controls () /* Scene leads to explanation of the sypnosis and controls. */
-{
 
   /* timer variables */
   let currentTime = 0;
