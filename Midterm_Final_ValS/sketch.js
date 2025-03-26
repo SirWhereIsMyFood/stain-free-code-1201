@@ -45,13 +45,8 @@ let hand;
 let poison;
 
 /* image variables, but for display on the boxes */
-let dispSPAM;
-let disptuna;
-let disponigiri;
-let dispwater;
-let dispgato;
-let dispdr;
-let dispquestion;
+let dispFOOD = [];
+let dispDRINK = [];
 
 let SPAMx = 475;
 let SPAMy = 600;
@@ -75,9 +70,9 @@ let windowy = 200;
 let signxlocation = 75;  
 let signylocation = 225;
 
-let ellipseX = 75;
-let ellipseY = 225;
-
+/* grouped ellipse to turn into spawtify */
+let spawtifyX = 75;
+let spawtifyY = 225;
 let lineX
 let lineY
 
@@ -109,13 +104,13 @@ function preload()
   /* displayed images that are movable above
   and images below will be for display only */
 
-  dispSPAM = loadImage ("img/SPAM.png");
-  disptuna = loadImage ("img/Tunacan.png");
-  disponigiri = loadImage ("img/onigiri.png");
-  dispwater = loadImage ("img/BottledWater.png");
-  dispgato = loadImage ("img/gatorade.png");
-  dispdr = loadImage ("img/drpepper.png");
-  dispquestion = loadImage ("img/question.png");
+  dispFOOD[0] = loadImage ("img/SPAM.png");
+  dispFOOD[1] = loadImage ("img/Tunacan.png");
+  dispFOOD[2] = loadImage ("img/onigiri.png");
+  dispDRINK[0] = loadImage ("img/BottledWater.png");
+  dispDRINK[1] = loadImage ("img/gatorade.png");
+  dispDRINK[2] = loadImage ("img/drpepper.png");
+  dispDRINK[3] = loadImage ("img/question.png");
 
 }
 
@@ -171,7 +166,7 @@ function controls () /* Scene leads to explanation of the sypnosis and controls.
   textFont (myFont);
   text ('CLICK TO PROCEED!', width/2, height/2, width/2, height/2);
 
-  /* timer variables */
+  /* timer variables */ /*
   let currentTime = 0;
   let timer1 = 8000 ;
   let timer2 = 10000;
@@ -206,7 +201,7 @@ function controls () /* Scene leads to explanation of the sypnosis and controls.
   }
 
   print ("currentTime =" + currentTime);
-
+  */
 }
 
 function scene ()
