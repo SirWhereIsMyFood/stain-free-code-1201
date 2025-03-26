@@ -36,10 +36,22 @@ let b = 97;
 /* image variables */
 let SPAM;
 let tuna;
+let onigiri;
 let bill;
 let water;
+let gatorade;
+let drpepper;
 let hand;
 let poison;
+
+/* image variables, but for display on the boxes */
+let dispSPAM;
+let disptuna;
+let disponigiri;
+let dispwater;
+let dispgato;
+let dispdr;
+let dispquestion;
 
 let SPAMx = 475;
 let SPAMy = 600;
@@ -86,10 +98,24 @@ function preload()
 
   SPAM = loadImage ("img/SPAM.png");
   tuna = loadImage ("img/Tunacan.png");
+  onigiri = loadImage ("img/onigiri.png");
   bill = loadImage ("img/PNGCipher.png");
   water = loadImage ("img/BottledWater.png");
+  gatorade = loadImage ("img/gatorade.png");
+  drpepper = loadImage ("img/drpepper.png");
   hand = loadImage ("img/HandWater.png");
   poison = loadImage ("img/BottledPoison.png");
+
+  /* displayed images that are movable above
+  and images below will be for display only */
+
+  dispSPAM = loadImage ("img/SPAM.png");
+  disptuna = loadImage ("img/Tunacan.png");
+  disponigiri = loadImage ("img/onigiri.png");
+  dispwater = loadImage ("img/BottledWater.png");
+  dispgato = loadImage ("img/gatorade.png");
+  dispdr = loadImage ("img/drpepper.png");
+  dispquestion = loadImage ("img/question.png");
 
 }
 
