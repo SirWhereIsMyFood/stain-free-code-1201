@@ -147,18 +147,6 @@ function draw()
 
 }
 
-function mousePressed ()
-{
-  if (state == "start")
-  {
-    state = "controls";
-  }
- else if (state == "scene over")
-  {
-    state = "start";
-  }
-}
-
 /* The starting point for the game, has a cooldown time to procees. 
 Scene leads to explanation of the sypnosis and controls. */
 function start ()
@@ -291,4 +279,22 @@ function keyPressed ()
   {
     whatDRINK = int(random(dispDRINK.length));
   }
+
+  if (key == "F" && state == "game")
+  {
+    
+  }
+}
+
+function mousePressed ()
+{
+  if (state == "start")
+  {
+    state = "controls";
+  }
+ else if (state == "scene over")
+  {
+    state = "start";
+  }
+
 }
