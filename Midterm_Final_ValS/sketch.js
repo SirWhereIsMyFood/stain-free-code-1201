@@ -156,15 +156,6 @@ function mousePressed ()
   }
 }
 
-function keyPressed ()
-{
-  if (key == "e" && state == "controls")
-  {
-    game ();
-  }
-  
-}
-
 /* The starting point for the game, has a cooldown time to procees. 
 Scene leads to explanation of the sypnosis and controls. */
 function start ()
@@ -196,19 +187,21 @@ function start ()
   strokeWeight (strokefade);
   fill (opacity);
   text ("C O N T R O L S", width/2, height/2, width/2, height/4);
+  text ("1 - F O O D", width/2 - 150, height/2 + 150, width/2 - 150, height/4 + 150);
+  text ("2 - D R I N K S", width/2 + 150, height/2 + 150, width/2 - 150, height/4 + 150);
   noStroke();
   opacity = opacity + fade;
 
   if (currentTime > timer2)
   {
-    state = "scene";
+    text ("P R E S S  S P A C E  T O  P R O C E E D", width/2, height/2 + 400, width/2, height/4 + 200);
   }
   else if (currentTime > timer1)
   {
     if (opacity > 255)
     {
       fade = fade - 0.5;
-      strokefade = strokefade - 1
+      strokefade = strokefade - 1;
     }
   }
 
@@ -266,4 +259,14 @@ function game ()
     SPAMx = mouseX;
     SPAMy = mouseY;
   }
+}
+
+function keyPressed ()
+{
+  print ("Key pressed: " + key);
+  if (key == " " && state == "controls")
+  {
+    state = "game";
+  }
+  
 }
