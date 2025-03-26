@@ -17,13 +17,11 @@
   monogram fonts - https://datagoblin.itch.io/monogram
   fade animation text - https://editor.p5js.org/remarkability/sketches/rtM08miUD
   clcking on objects - The Coding Train "7.6: Clicking on Objects - p5.js Tutorial" URL: https://www.youtube.com/watch?v=DEHsr4XicN8&t=265s
-
-  CONTROLS:
+  Session 05 - MTEC 1201
 
 */
 
-let state = "controls"; /* I'm adding my scenes here */
-let scene = 0;
+let state = "start"; /* I'm adding my scenes here */
 
 /* Font Variable(s) */
 let myFont;
@@ -89,7 +87,7 @@ let slotFill = [200, 200, 245];
 function preload()
 {
 
-  myFont = loadFont ('font/monogram.ttf');
+  myFont = loadFont ('fonts/monogram.ttf');
 
   SPAM = loadImage ("img/SPAM.png");
   tuna = loadImage ("img/Tunacan.png");
@@ -111,7 +109,7 @@ function preload()
   dispDRINK[1] = loadImage ("img/gatorade.png");
   dispDRINK[2] = loadImage ("img/drpepper.png");
   dispDRINK[3] = loadImage ("img/question.png");
-
+  
 }
 
 function setup() 
@@ -125,8 +123,11 @@ function setup()
 
 function draw() 
 {
-
-  if (state == "controls")
+  if (state == "start")
+  {
+    start ();
+  }
+  else if (state == "controls")
   {
     controls ();
   }
@@ -145,28 +146,39 @@ function draw()
 
 function mousePressed ()
 {
-  if (state == "scene over")
+  if (state == "start")
   {
     state = "controls";
+  }
+ else if (state == "scene over")
+  {
+    state = "start";
   }
 }
 
 function keyPressed ()
 {
-
-
+  if (key == "e" && state == "controls")
+  {
+    game ();
+  }
   
 }
 
-                      /* The starting point for the game, has a cooldown time to procees. */
-function controls () /* Scene leads to explanation of the sypnosis and controls. */
+/* The starting point for the game, has a cooldown time to procees. 
+Scene leads to explanation of the sypnosis and controls. */
+function start ()
 {
   background (r, g, b);
   textSize (100);
   textFont (myFont);
-  text ('CLICK TO PROCEED!', width/2, height/2, width/2, height/2);
+  text ('WELCOME, PRESS TO SEE THE OVERVIEW.', width/2, height/2, width/2, height/2);
 
-  /* timer variables */ /*
+}
+
+  function controls ()
+  {
+  /* timer variables */
   let currentTime = 0;
   let timer1 = 8000 ;
   let timer2 = 10000;
@@ -201,10 +213,9 @@ function controls () /* Scene leads to explanation of the sypnosis and controls.
   }
 
   print ("currentTime =" + currentTime);
-  */
 }
 
-function scene ()
+function game ()
 {
 
   fill (0);
