@@ -263,12 +263,6 @@ function game ()
   /* I want to station my products in the machines. */
 
   //image (SPAM, SPAMx, SPAMy, width/10, height/10);
-
-  if (mouseIsPressed===true)
-  {
-    SPAMx = mouseX;
-    SPAMy = mouseY;
-  }
 }
 
 function keyPressed ()
@@ -318,5 +312,11 @@ function mousePressed ()
   {
     state = "start";
   }
+
+  if (mouseIsPressed===true)
+    {
+      SPAMx = mouseX;
+      SPAMy = mouseY;
+    }
 
 }
