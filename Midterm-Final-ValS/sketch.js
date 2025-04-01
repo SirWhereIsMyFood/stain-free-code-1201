@@ -22,6 +22,8 @@
 */
 
 let state = "start"; /* I'm adding my scenes here */
+let venddrink = 0;
+let vendfood = 0;
 
 /* Font Variable(s) */
 let myFont;
@@ -133,6 +135,7 @@ function draw()
   if (state == "start")
   {
     start ();
+    print ()
   }
   else if (state == "controls")
   {
@@ -264,11 +267,15 @@ function game ()
 
   //image (SPAM, SPAMx, SPAMy, width/10, height/10);
 
+  if(vendfood)
+  {
+    vendfood = false;
   if (mouseIsPressed===true)
   {
-    SPAMx = mouseX;
-    SPAMy = mouseY;
+
+    image(dispFOOD[whatFOOD], mouseX, mouseY, width/5, height/6);
   }
+}
 }
 
 function keyPressed ()
@@ -297,9 +304,10 @@ function keyPressed ()
     whatDRINK = int(random(dispDRINK.length));
   }
 
-  if (key == "F" && state == "game")
+  if ((key == "F" || key == "f") && state == "game")
   {
-    image (food(random(0, 2)), 475, 600, width/10, height/10);
+    vendfood = true;
+    //image (food(random(0, 2)), 475, 600, width/10, height/10);
   }
 
   if (key == "D" && state == "game")
