@@ -47,6 +47,7 @@ let fade = 1;
 let strokefade = 5
 
 let currentTime;
+let endTime = 60000;
 
 let vendingxlocation = 500;
 let vendingylocation = 575;
@@ -58,10 +59,11 @@ let windowx = 200;
 let windowy = 200;
 
 /* grouped ellipse to turn into "spawtify" */
-let spawtifyX = 75;
-let spawtifyY = 225;
-let lineX
-let lineY
+let spawtifyX = 100;
+let spawtifyY = 100;
+let sz = 100;
+let lineX = 100;
+let lineY = 100;
 
 let quadFill = [130, 96, 88];
 let squareFill = [0, 0, 0, 300];
@@ -81,11 +83,11 @@ function preload()
   food[0] = loadImage ("img/SPAM.png");
   food[1] = loadImage ("img/Tunacan.png");
   food[2] = loadImage ("img/onigiri.png");
-  bill = loadImage ("img/PNGCipher.png");
+  //bill = loadImage ("img/PNGCipher.png");
   drink[0] = loadImage ("img/BottledWater.png");
   drink[1] = loadImage ("img/gatorade.png");
   drink[2] = loadImage ("img/drpepper.png");
-  hand = loadImage ("img/HandWater.png");
+  //hand = loadImage ("img/HandWater.png");
   drink[3] = loadImage ("img/BottledPoison.png");
 
   /* displayed images that are movable above
@@ -108,7 +110,7 @@ function setup()
   rectMode (CENTER);
   textAlign (CENTER);
   imageMode (CENTER);
-
+  currentTime = millis();
 }
 
 function draw() 
@@ -141,31 +143,13 @@ background (r, g, b);
   textSize (100);
   textFont (myFont);
   text ('WELCOME, PRESS P TO PROCEED.', width/2, height/2, width/2, height/2);
+  resetTime = millis();
   
-    /*
-    background (r, g, b);
-    textSize (35);
-    textFont (myFont);
-    fill (opacity);
-    text ("You're just trying to get a snack from the vending machine, in the cafeteria. But why is there a funny feeling about this? And why are you here alone? Couldn't you just bring your own food?", 500, 300, width/2, height/2);
-  
-    textSize (50);
-    stroke(0);
-    strokeWeight (strokefade);
-    fill (opacity);
-    text ("C O N T R O L S", width/2, height/2, width/2, height/4);
-    text ("1 - F O O D", width/2 - 150, height/2 + 150, width/2 - 150, height/4 + 150);
-    text ("2 - D R I N K S", width/2 + 150, height/2 + 150, width/2 - 150, height/4 + 150);
-    noStroke();
-    opacity = opacity + fade;
-    */
-    
   if (key == "p" || key == "P")
   {
+    let timer1 = 2000;
+    let timer2 = 15000;
     let currentTime = 0;
-    let timer1 = 1000;
-    let timer2 = 3000;
-  
     currentTime = millis();
 
     background (r, g, b);
@@ -178,8 +162,9 @@ background (r, g, b);
         textSize (35);
       textFont (myFont);
       fill (opacity);
-      text ("You're just trying to get a snack from the vending machine, in the cafeteria. But why is there a funny feeling about this? And why are you here alone? Couldn't you just bring your own food?", 500, 300, width/2, height/2);
-    
+      //text ("You're just trying to get a snack from the vending machine, in the cafeteria. But why is there a funny feeling about this? And why are you here alone? Couldn't you just bring your own food?", 500, 300, width/2, height/2);
+      text ("You're coming home from a late night drive due to a family emergency.. and.. kind of sleepy.. and the tank is almost empty.. So you exit the inerstate and pull over to a resting point with a vending machine, but stil hungry with the next town being miles away. What can you do though? ", 500, 275, width/2, height/2);
+
       textSize (50);
       stroke(0);
       strokeWeight (strokefade);
@@ -198,14 +183,16 @@ background (r, g, b);
           strokefade = strokefade - 1;
         }
         print ("currentTime =" + currentTime);
+
       }
       else if (currentTime > timer1)
       {
       textSize (35);
       textFont (myFont);
       fill (opacity);
-      text ("You're just trying to get a snack from the vending machine, in the cafeteria. But why is there a funny feeling about this? And why are you here alone? Couldn't you just bring your own food?", 500, 300, width/2, height/2);
-    
+      //text ("You're just trying to get a snack from the vending machine, in the cafeteria. But why is there a funny feeling about this? And why are you here alone? Couldn't you just bring your own food?", 500, 300, width/2, height/2);
+      text ("You're coming home from a late night drive due to a family emergency.. and.. kind of sleepy.. and the tank is almost empty.. So you exit the inerstate and pull over to a resting point with a vending machine, but stil hungry with the next town being miles away. What can you do though? ", 500, 275, width/2, height/2);
+
       textSize (50);
       stroke(0);
       strokeWeight (strokefade);
@@ -277,13 +264,19 @@ function game ()
   text ("F", 200, 450, width/5, height/5);
   text ("D", 800, 450, width/5, height/5);
 
-  text ("R TO RETURN BACK", 200, 950, width/5, height/5);
+  text ("R TO RESTART", 200, 950, width/5, height/5);
 
-  image (dispFOOD[whatFOOD], 200, 200, width/6, height/6);
-  image (dispDRINK[whatDRINK], 800, 200, width/6, height/6);
+  image (dispFOOD[whichFOOD], 200, 200, width/6, height/6);
+  image (dispDRINK[whichDRINK], 800, 200, width/6, height/6);
+
+  if (dist(spawtifyX, spawtifyY, mouseX, mouseY) < sz / 2)
+  {
+    strokeWeight (10);
+    
+  }
 
   fill (0);
-  ellipse (100, 100, 100, 100);
+  ellipse (spawtifyX, spawtifyY, sz, sz);
 
   /* I want to station my products in the machines. */
 
@@ -298,7 +291,37 @@ function game ()
 }
 }
 
+function sceneOver ()
+{
+  if (currentTime >= endTime)
+  {
+    resetMillis();
+  }
+}
+
 function keyPressed ()
 {
+
+  if (key == " " && state == "main menu")
+    {
+      clear();
+      state = "game";
+    }
+
+  if (key == "1")
+  {
+    whichFOOD = int(random(dispFOOD.length));
+  }
+
+  if (key == "2")
+  {
+    whichDRINK = int(random(dispDRINK.length));
+  }
+
+  if (key == "r" || key == "R")
+  {
+    state = "main menu";
+  }
+        
 
 }
