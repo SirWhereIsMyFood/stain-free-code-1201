@@ -269,14 +269,17 @@ function game ()
   image (dispFOOD[whichFOOD], 200, 200, width/6, height/6);
   image (dispDRINK[whichDRINK], 800, 200, width/6, height/6);
 
-  if (dist(spawtifyX, spawtifyY, mouseX, mouseY) < sz / 2)
+  if (dist(spawtifyX, spawtifyY, mouseX, mouseY) < sz / 2 || dist(spawtifyX + 800, spawtifyY, mouseX, mouseY) < sz / 2)
   {
-    strokeWeight (10);
+    
+    fill (27, 229, 23);
+    strokeWeight (2);
+    stroke (100, random(200), 100);
     
   }
 
-  fill (0);
   ellipse (spawtifyX, spawtifyY, sz, sz);
+  ellipse (spawtifyX + 800, spawtifyY, sz, sz);
 
   /* I want to station my products in the machines. */
 
