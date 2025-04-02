@@ -181,7 +181,7 @@ background (r, g, b);
 
   print ("currentTime =" + currentTime);
   }
-  else if (key == " " && currentTime > timer2)
+  else if (key == " " && (currentTime > timer2))
   {
     game ();
   }
@@ -190,14 +190,74 @@ background (r, g, b);
 function game ()
 {
   background (r, g, b);
+
+  /* Rebuilding our vending machine scenario 
+
+  Starting with the floor. */
+  push ();
+  fill (quadFill);
+  stroke (0);
+  strokeWeight (5);
+  quad (25, 800, 975, 800, 1000, 1000, 0, 1000);
+  pop ();
+
+  /* Moving onto the window. */
+  noFill ();
+  stroke (0);
+  strokeWeight (5);
+  rect (200, 200, width/5, height/5);
+  rect (800, 200, width/5, height/5);
+
+  /* And now the vending machine legend itself. */
+  fill (squareFill);
+  square (squarexlocation, squareylocation, 75);
+  square (squarexlocation + 150, squareylocation, 75);
+
+  fill (vendingFill);
+  rect (vendingxlocation, vendingylocation, width/4, height/2.25);
+  fill (panelFill);
+  rect (vendingxlocation - 15, vendingylocation - 20, width/5.5, height/3);
+
+  /* second vending machine on the right */
+  fill (squareFill);
+  square (squarexlocation + 350, squareylocation, 75);
+  square (squarexlocation + 500, squareylocation, 75);
+
+  fill (vendingFill);
+  rect (vendingxlocation + 350, vendingylocation, width/4, height/2.25);
+  fill (panelFill)
+  rect (vendingxlocation + 335, vendingylocation -20, width/5.5, height/3);4
+
+  /* add 1 & 2 as a reminder for controls */
+  textFont(myFont);
+  text ("1", 200, 150, width/5, height/5);
+  text ("2", 800, 150, width/5, height/5);
+
+  text ("F", 200, 450, width/5, height/5);
+  text ("D", 800, 450, width/5, height/5);
+
+  text ("R TO RETURN BACK", 200, 950, width/5, height/5);
+
+  image (dispFOOD[whatFOOD], 200, 200, width/6, height/6);
+  image (dispDRINK[whatDRINK], 800, 200, width/6, height/6);
+
+  fill (0);
+  ellipse (100, 100, 100, 100);
+
+  /* I want to station my products in the machines. */
+
+  if(vendfood)
+  {
+    vendfood = false;
+  if (mouseIsPressed===true)
+  {
+
+    image(dispFOOD[whatFOOD], mouseX, mouseY, width/5, height/6);
+  }
+}
 }
 
 function keyPressed ()
 {
-  print ("Key pressed: " + key);
-  if (key == " " && state == "main menu")
-  {
-    background(0);
-    background(r, g, b);
-  }
+
 }
