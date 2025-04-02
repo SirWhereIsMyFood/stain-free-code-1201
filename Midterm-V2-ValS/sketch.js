@@ -19,6 +19,7 @@ SOURCES:
 */
 
 let state = "main menu"; /* Here is where I'm throwing my scenes in */
+let reset = false;
 let venddrink = 0; /* t/f statements */
 let vendfood = 0;
 
@@ -162,20 +163,44 @@ background (r, g, b);
   if (key == "p" || key == "P")
   {
     let currentTime = 0;
-    let timer1 = 5000;
-    let timer2 = 20000;
+    let timer1 = 1000;
+    let timer2 = 3000;
   
     currentTime = millis();
-    
+
     background (r, g, b);
     
     if (currentTime > timer2)
       {
-        text ("P R E S S  S P A C E  T O  P R O C E E D", width/2, height/2 + 400, width/2, height/4 + 200);
+        textSize (45);
+        text ("P R E S S  S P A C E  T O  C O N T I N U E", width/10 + 400, height/1.25 + 950, width/10 + 850, height/1.25 + 950);
+
+        textSize (35);
+      textFont (myFont);
+      fill (opacity);
+      text ("You're just trying to get a snack from the vending machine, in the cafeteria. But why is there a funny feeling about this? And why are you here alone? Couldn't you just bring your own food?", 500, 300, width/2, height/2);
+    
+      textSize (50);
+      stroke(0);
+      strokeWeight (strokefade);
+      fill (opacity);
+      text ("C O N T R O L S", width/2, height/2, width/2, height/4);
+      text ("1 - F O O D", width/2 - 150, height/2 + 150, width/2 - 150, height/4 + 150);
+      text (" (Pressing 1 on your keyboard activates the randomizer in the food display box) ", width/2 - 200, height/2 + 175, width/2 - 150, height/4 + 100);
+      text ("2 - D R I N K S", width/2 + 150, height/2 + 150, width/2 - 150, height/4 + 150);
+      text (" (Pressing 2 on your keyboard activates the randomizer in the drink display box) ", width/2 + 200, height/2 + 175, width/2 -150, height/4 + 100);
+      noStroke();
+      opacity = opacity + fade;
+  
+        if (opacity > 255)
+        {
+          fade = fade - 0.5;
+          strokefade = strokefade - 1;
+        }
+        print ("currentTime =" + currentTime);
       }
       else if (currentTime > timer1)
       {
-        background (r, g, b);
       textSize (35);
       textFont (myFont);
       fill (opacity);
@@ -187,7 +212,9 @@ background (r, g, b);
       fill (opacity);
       text ("C O N T R O L S", width/2, height/2, width/2, height/4);
       text ("1 - F O O D", width/2 - 150, height/2 + 150, width/2 - 150, height/4 + 150);
+      text (" (Pressing 1 on your keyboard activates the randomizer in the food display box) ", width/2 - 200, height/2 + 175, width/2 - 150, height/4 + 100);
       text ("2 - D R I N K S", width/2 + 150, height/2 + 150, width/2 - 150, height/4 + 150);
+      text (" (Pressing 2 on your keyboard activates the randomizer in the drink display box) ", width/2 + 200, height/2 + 175, width/2 -150, height/4 + 100);
       noStroke();
       opacity = opacity + fade;
   
