@@ -18,6 +18,31 @@ SOURCES:
   Session 05 - MTEC 1201
 */
 
+let state = "mainMenu"; /* Here is where I'm throwing my scenes in */
+let venddrink = 0; /* t/f statements */
+let vendfood = 0;
 
+/* Font variables */
+let myFont;
 
+/* image variables */
+let food = [];
+let drink = [];
 
+/* create an image variable but for displays only on the boxes */
+let dispFOOD = []
+let whichFOOD = 0;
+let dispDRINK = []
+let whichDRINK = 0;
+
+/* background color variables */
+let r = 225;
+let g = 209;
+let b = 97;
+
+/* text motion variables */
+let opacity = 0;
+let fade = 1;
+let strokefade = 5
+
+let currentTime;
