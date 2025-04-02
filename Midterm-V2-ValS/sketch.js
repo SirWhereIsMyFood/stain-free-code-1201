@@ -139,52 +139,8 @@ function mainMenu()
 background (r, g, b);
   textSize (100);
   textFont (myFont);
-  text ('WELCOME, PRESS THE SPACE BAR TO PROCEED.', width/2, height/2, width/2, height/2);
+  text ('WELCOME, CLICK YOUR MOUSE/TRACKPAD TO PROCEED.', width/2, height/2, width/2, height/2);
 
-  if (key == " ")
-  {
-    /* timer variables */
-  let currentTime = 0;
-  let timer1 = 8000 ;
-  let timer2 = 10000;
-
-  currentTime = millis();
-
-  background (r, g, b);
-  textSize (35);
-  textFont (myFont);
-  fill (opacity);
-  text ("You're just trying to get a snack from the vending machine, in the cafeteria. But why is there a funny feeling about this? And why are you here alone? Couldn't you just bring your own food?", 500, 300, width/2, height/2);
-
-  textSize (50);
-  stroke(0);
-  strokeWeight (strokefade);
-  fill (opacity);
-  text ("C O N T R O L S", width/2, height/2, width/2, height/4);
-  text ("1 - F O O D", width/2 - 150, height/2 + 150, width/2 - 150, height/4 + 150);
-  text ("2 - D R I N K S", width/2 + 150, height/2 + 150, width/2 - 150, height/4 + 150);
-  noStroke();
-  opacity = opacity + fade;
-
-  if (currentTime > timer2)
-  {
-    text ("P R E S S  S P A C E  T O  P R O C E E D", width/2, height/2 + 400, width/2, height/4 + 200);
-  }
-  else if (currentTime > timer1)
-  {
-    if (opacity > 255)
-    {
-      fade = fade - 0.5;
-      strokefade = strokefade - 1;
-    }
-  }
-
-  print ("currentTime =" + currentTime);
-  }
-  else if (key == " " && (currentTime > timer2))
-  {
-    game ();
-  }
 }
 
 function game ()
@@ -260,4 +216,55 @@ function game ()
 function keyPressed ()
 {
 
+}
+
+function mousePressed ()
+{
+  if (state == "main menu")
+  {
+
+    background (r, g, b);
+
+  let currentTime = 0;
+  let timer1 = 8000 ;
+  let timer2 = 10000;
+
+  resetMillis ();
+  currentTime = millis();
+
+  background (r, g, b);
+  textSize (35);
+  textFont (myFont);
+  fill (opacity);
+  text ("You're just trying to get a snack from the vending machine, in the cafeteria. But why is there a funny feeling about this? And why are you here alone? Couldn't you just bring your own food?", 500, 300, width/2, height/2);
+
+  textSize (50);
+  stroke(0);
+  strokeWeight (strokefade);
+  fill (opacity);
+  text ("C O N T R O L S", width/2, height/2, width/2, height/4);
+  text ("1 - F O O D", width/2 - 150, height/2 + 150, width/2 - 150, height/4 + 150);
+  text ("2 - D R I N K S", width/2 + 150, height/2 + 150, width/2 - 150, height/4 + 150);
+  noStroke();
+  opacity = opacity + fade;
+
+  if (currentTime > timer2)
+  {
+    text ("P R E S S  S P A C E  T O  P R O C E E D", width/2, height/2 + 400, width/2, height/4 + 200);
+  }
+  else if (currentTime > timer1)
+  {
+    if (opacity > 255)
+    {
+      fade = fade - 0.5;
+      strokefade = strokefade - 1;
+    }
+    print ("currentTime =" + currentTime);
+  }
+  
+}
+  else if (state == "scene over")
+  {
+    state = "main menu";
+  }
 }
