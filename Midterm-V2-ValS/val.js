@@ -20,8 +20,8 @@ SOURCES:
 
 let state = "main menu"; /* Here is where I'm throwing my scenes in */
 let reset = false;
-let venddrink = 0; /* t/f statements */
-let vendfood = 0;
+let venddrink = false; /* t/f statements */
+let vendfood = false;
 
 /* Font variables */
 let myFont;
@@ -286,12 +286,18 @@ function game ()
   if(vendfood)
   {
     vendfood = false;
-  if (mouseIsPressed===true)
+  if (key == "f" || key == "F")
   {
 
     image(dispFOOD[whatFOOD], mouseX, mouseY, width/5, height/6);
   }
 }
+
+  if(venddrink)
+  {
+    venddrink = false;
+
+  }
 }
 
 function sceneOver ()
@@ -300,6 +306,9 @@ function sceneOver ()
   {
     resetMillis();
   }
+  textFont (myFont);
+  textSize (45);
+  text ("Whoa, that feeling is a little bubbly.. you passeed on the side of the parking lot. Click to play the experience again.", width/2, height/2, width/2, height/2);
 }
 
 function keyPressed ()
