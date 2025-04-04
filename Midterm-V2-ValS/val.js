@@ -61,7 +61,7 @@ let windowy = 200;
 /* grouped ellipse to turn into "spawtify" */
 let spawtifyX = 100;
 let spawtifyY = 100;
-let sz = 100;
+let xy = 100;
 let lineX = 100;
 let lineY = 100;
 
@@ -269,7 +269,7 @@ function game ()
   image (dispFOOD[whichFOOD], 200, 200, width/6, height/6);
   image (dispDRINK[whichDRINK], 800, 200, width/6, height/6);
 
-  if (dist(spawtifyX, spawtifyY, mouseX, mouseY) < sz / 2 || dist(spawtifyX + 800, spawtifyY, mouseX, mouseY) < sz / 2)
+  if (dist(spawtifyX, spawtifyY, mouseX, mouseY) < xy / 2 || dist(spawtifyX + 800, spawtifyY, mouseX, mouseY) < xy / 2)
   {
     
     fill (27, 229, 23);
@@ -278,8 +278,8 @@ function game ()
     
   }
 
-  ellipse (spawtifyX, spawtifyY, sz, sz);
-  ellipse (spawtifyX + 800, spawtifyY, sz, sz);
+  ellipse (spawtifyX, spawtifyY, xy, xy);
+  ellipse (spawtifyX + 800, spawtifyY, xy, xy);
 
   /* I want to station my products in the machines. */
 
