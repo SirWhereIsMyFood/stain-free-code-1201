@@ -13,11 +13,15 @@ testing out the for loops or even creating nested loops.
 
 */
 
+let FOOD = [];
+let DRINK = [];
+let MISC = [];
+
 function preLoad ()
 {
 
 
-  
+
 }
 
 function setup ()
