@@ -13,10 +13,25 @@ testing out the for loops or even creating nested loops.
 
 */
 
-function setup ()
+function preLoad ()
 {
 
 
+  
+}
+
+function setup ()
+{
+
+  createCanvas (1000, 1000);
+  rectMode (CENTER);
+  imageMode (CENTER);
+  background (100);
+
+}
+
+function draw ()
+{
 
 
 
