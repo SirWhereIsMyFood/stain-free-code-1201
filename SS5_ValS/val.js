@@ -33,7 +33,7 @@ function setup ()
   rectMode (CENTER);
   imageMode (CENTER);
   background (100);
-  colorMode (HSL);
+ //colorMode (HSL);
 
 }
 
@@ -44,9 +44,9 @@ function draw ()
   let gravity = 400;
   let imgs = 10;
 
-  let c = color (220, 225, 97);
-  background (c);
-  //background (220, 225, 97);
+ // let c = color (220, 225, 97);
+  //background (c);
+  background (220, 225, 97);
   noFill();
   stroke (0);
   strokeWeight (10);
@@ -56,9 +56,11 @@ function draw ()
   //noStroke ();
   
   /* make sure mouse is within boundaries of window for inanimate object to fall */
-  if (mouseX > 250 && mouseX < 750 && mouseY > 400 && mouseY < 700)
+  for (let i = 400; i <= 725; i += imgs)
+  //if (mouseX > 250 && mouseX < 750 && mouseY > 400 && mouseY < 700)
   {
-    for (let i = 400; i <= 725; i += imgs)
+    //for (let i = 400; i <= 725; i += imgs)
+      if (mouseX > 250 && mouseX < 750 && mouseY > 400 && mouseY < 700)
     {
       WHATISMISC = int(random(MISC.length))
       image (WHATISMISC, x, gravity, imgs, imgs);
