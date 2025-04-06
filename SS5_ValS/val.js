@@ -37,6 +37,11 @@ function setup ()
 function draw ()
 {
 
+  background (220, 225, 97);
+  noFill();
+  stroke (0);
+  strokeWeight (10);
+  rect (width / 2, height / 2, width / 2, height / 2);
 
 
 }
