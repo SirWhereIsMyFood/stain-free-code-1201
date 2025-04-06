@@ -40,8 +40,9 @@ function setup ()
 function draw ()
 {
 
+  let x = 0;
   let gravity = 0;
-  let imgs = 0;
+  let imgs = 25;
 
   let c = color (220, 225, 97);
   //background (220, 225, 97);
@@ -58,7 +59,11 @@ function draw ()
   /* make sure mouse is within boundaries of window for inanimate object to fall */
   if (mouseX > 250 && mouseX < 750 && mouseY > 250 && mouseY < 750)
   {
-    
+    for (let i = 0; i <= width; i += imgs)
+    {
+      WHATISMISC = int(random(MISC.length))
+      image (MISC(WHATISMISC), x, gravity, imgs, imgs);
+    }
   }
 
 
