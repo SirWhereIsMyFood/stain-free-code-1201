@@ -54,6 +54,13 @@ function draw ()
   
   //noStroke ();
   
+  
+
+
+
+
+
+
   /* MAKE WINDOW FRAMES OPEN OUTWARD */
   strokeWeight (5);
   quad (250, 250, 750, 250, 725, 400, 275, 400); 
