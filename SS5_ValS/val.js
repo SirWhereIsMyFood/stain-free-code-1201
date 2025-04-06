@@ -17,9 +17,13 @@ let FOOD = [];
 let DRINK = [];
 let MISC = [];
 
+let WHATFOOD = 0;
+let WHATDRINK = 0;
+let MISCELLANEOUS = 0;
+
 function preLoad ()
 {
-
+  
 
 
 }
@@ -31,13 +35,19 @@ function setup ()
   rectMode (CENTER);
   imageMode (CENTER);
   background (100);
+  colorMode (HSL);
 
 }
 
 function draw ()
 {
 
-  background (220, 225, 97);
+  let img = 0;
+
+  let c = color (220, 225, 97);
+  //background (220, 225, 97);
+  background (c);
+  let lightValue = lightness (c);
   noFill();
   stroke (0);
   strokeWeight (10);
@@ -50,5 +60,7 @@ function draw ()
   strokeWeight (5);
   quad (250, 250, 750, 250, 725, 400, 275, 400); 
   quad (250, 750, 750, 750, 725, 700, 275, 700);
+
+  
 
 }
