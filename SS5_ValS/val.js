@@ -59,7 +59,7 @@ function draw ()
   /* make sure mouse is within boundaries of window for inanimate object to fall */
   if (mouseX > 250 && mouseX < 750 && mouseY > 250 && mouseY < 750)
   {
-    for (let i = 0; i <= width; i += imgs)
+    for (let i = 250; i <= width / 1.3; i += imgs)
     {
       WHATISMISC = int(random(MISC.length))
       image (MISC(WHATISMISC), x, gravity, imgs, imgs);
