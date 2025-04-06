@@ -40,14 +40,13 @@ function setup ()
 function draw ()
 {
 
-  let x = 0;
-  let gravity = 0;
-  let imgs = 25;
+  let x = random(250, 750);
+  let gravity = 400;
+  let imgs = 10;
 
   let c = color (220, 225, 97);
-  //background (220, 225, 97);
   background (c);
-  let lightValue = lightness (c);
+  //background (220, 225, 97);
   noFill();
   stroke (0);
   strokeWeight (10);
@@ -57,18 +56,34 @@ function draw ()
   //noStroke ();
   
   /* make sure mouse is within boundaries of window for inanimate object to fall */
-  if (mouseX > 250 && mouseX < 750 && mouseY > 250 && mouseY < 750)
+  if (mouseX > 250 && mouseX < 750 && mouseY > 400 && mouseY < 700)
   {
-    for (let i = 250; i <= width / 1.3; i += imgs)
+    for (let i = 400; i <= 725; i += imgs)
     {
       WHATISMISC = int(random(MISC.length))
-      image (MISC(WHATISMISC), x, gravity, imgs, imgs);
+      image (WHATISMISC, x, gravity, imgs, imgs);
+      fill (random(100, 200), 220, 97);
+      ellipse (x, gravity, imgs, imgs)
+
+      strokeWeight (5);
+    quad (250, 250, 750, 250, 725, 400, 275, 400); 
+    quad (250, 750, 750, 750, 725, 700, 275, 700);
     }
+
+    gravity += random(1, 10);
+
+    if (gravity >= 725)
+    {
+      gravity =- imgs
+    }
+  
   }
 
+  print ("gravity = : " + gravity);
 
 
-
+ // b ++ || random (20, 100);
+ // g ++ || random (195, 230);
 
 
   /* MAKE WINDOW FRAMES OPEN OUTWARD */
