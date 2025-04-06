@@ -41,6 +41,7 @@ function draw ()
 {
 
   let gravity = 0;
+  let imgs = 0;
 
   let c = color (220, 225, 97);
   //background (220, 225, 97);
