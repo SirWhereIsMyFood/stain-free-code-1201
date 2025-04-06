@@ -40,7 +40,7 @@ function setup ()
 function draw ()
 {
 
-  let img = 0;
+  let gravity = 0;
 
   let c = color (220, 225, 97);
   //background (220, 225, 97);
@@ -54,7 +54,11 @@ function draw ()
   
   //noStroke ();
   
-  
+  /* make sure mouse is within boundaries of window for inanimate object to fall */
+  if (mouseX > 250 && mouseX < 750 && mouseY > 250 && mouseY < 750)
+  {
+    
+  }
 
 
 
