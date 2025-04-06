@@ -13,18 +13,16 @@ testing out the for loops or even creating nested loops.
 
 */
 
-let FOOD = [];
-let DRINK = [];
 let MISC = [];
 
-let WHATFOOD = 0;
-let WHATDRINK = 0;
-let MISCELLANEOUS = 0;
+let WHATISMISC = 0;
 
 function preLoad ()
 {
-  
-
+  MISC [0] = loadImage ('imgs/choco.png');
+  MISC [1] = loadImage ('imgs/snack1.png');
+  MISC [2] = loadImage ('imgs/snack2.png');
+  MISC [3] = loadImage ('imgs/snack3.png');
 
 }
 
