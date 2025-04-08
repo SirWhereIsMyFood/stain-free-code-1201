@@ -77,9 +77,9 @@ function draw ()
     if (gravity >= 725)
     {
       gravity =- imgs
+    } */
     }
-    }
-      */
+      
     /*
     gravity += random(1, 10);
 
