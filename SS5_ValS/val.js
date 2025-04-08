@@ -57,21 +57,21 @@ function draw ()
   //noStroke ();
   
   /* make sure mouse is within boundaries of window for inanimate object to fall */
-  for (let i = random(250, 750); i <= 725 || i >= 250; i += imgs)
+  for (let i = 0; i < MISC.length; i ++)
   //if (mouseX > 250 && mouseX < 750 && mouseY > 400 && mouseY < 700)
   {
     //for (let i = 400; i <= 725; i += imgs)
       if (mouseX > 250 && mouseX < 750 && mouseY > 400 && mouseY < 700)
     {
      // WHATISMISC = int(random(MISC.length))
-      image (MISC[i], i, 400, width/4, height/4);
+      image (MISC[i], i * 50, 400, width/4, height/4);
       //fill (random(100, 200), 220, 97);
       //ellipse (x, gravity, imgs, imgs);
 
       strokeWeight (5);
     quad (250, 250, 750, 250, 725, 400, 275, 400); 
     quad (250, 750, 750, 750, 725, 700, 275, 700);
-      
+      /*
       gravity += random(0.1, 1);
 
     if (gravity >= 725)
@@ -79,7 +79,7 @@ function draw ()
       gravity =- imgs
     }
     }
-
+      */
     /*
     gravity += random(1, 10);
 
