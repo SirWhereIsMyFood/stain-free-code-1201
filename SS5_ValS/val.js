@@ -19,12 +19,12 @@ let WHATISMISC = 0;
 
 function preload ()
 {
-  /*
+  
   MISC [0] = loadImage ('imgs/choco.png');
   MISC [1] = loadImage ('imgs/snack1.png');
   MISC [2] = loadImage ('imgs/snack2.png');
   MISC [3] = loadImage ('imgs/snack3.png');
-*/
+
 }
 
 function setup ()
@@ -57,16 +57,16 @@ function draw ()
   //noStroke ();
   
   /* make sure mouse is within boundaries of window for inanimate object to fall */
-  for (let x = random(250, 750); x <= 725; x += imgs)
+  for (let i = random(250, 750); i <= 725 || i >= 250; i += imgs)
   //if (mouseX > 250 && mouseX < 750 && mouseY > 400 && mouseY < 700)
   {
     //for (let i = 400; i <= 725; i += imgs)
       if (mouseX > 250 && mouseX < 750 && mouseY > 400 && mouseY < 700)
     {
-      WHATISMISC = int(random(MISC.length))
-      //image (WHATISMISC, x, gravity, imgs, imgs);
-      fill (random(100, 200), 220, 97);
-      ellipse (x, gravity, imgs, imgs);
+     // WHATISMISC = int(random(MISC.length))
+      image (MISC[i], i, 400, width/4, height/4);
+      //fill (random(100, 200), 220, 97);
+      //ellipse (x, gravity, imgs, imgs);
 
       strokeWeight (5);
     quad (250, 250, 750, 250, 725, 400, 275, 400); 
