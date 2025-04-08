@@ -11,6 +11,8 @@ Soo.. after the midterm I do want to continue the whole vending machine theme, h
 want to brach off from that a bit and focus on this whole scenery but from another angle
 testing out the for loops or even creating nested loops.
 
+Credits:
+Thanks to this p5 web editor sketch for being of use: https://editor.p5js.org/xinxin/sketches/nC-CYIRGt
 */
 
 let MISC = [];
