@@ -15,7 +15,9 @@ testing out the for loops or even creating nested loops.
 
 let MISC = [];
 
-let WHATISMISC = 0;
+let gravity = 400;
+
+/* let WHATISMISC = 0; */
 
 function preload ()
 {
@@ -42,8 +44,7 @@ function draw ()
 {
 
   //let x = random(250, 750);
-  let gravity = 400;
-  let imgs = 25;
+  let imgs = 50;
 
   let c = color (220, 225, 97);
   background (c);
@@ -64,20 +65,20 @@ function draw ()
       if (mouseX > 250 && mouseX < 750 && mouseY > 400 && mouseY < 700)
     {
      // WHATISMISC = int(random(MISC.length))
-      image (MISC[i], i * 50, 400, width/4, height/4);
+      image (MISC[i], i * 250, gravity, 100, 100);
       //fill (random(100, 200), 220, 97);
       //ellipse (x, gravity, imgs, imgs);
 
       strokeWeight (5);
     quad (250, 250, 750, 250, 725, 400, 275, 400); 
     quad (250, 750, 750, 750, 725, 700, 275, 700);
-      /*
-      gravity += random(0.1, 1);
-
+      
+      gravity ++
+      
     if (gravity >= 725)
     {
-      gravity =- imgs
-    } */
+      gravity = 400
+    } 
     }
       
     /*
