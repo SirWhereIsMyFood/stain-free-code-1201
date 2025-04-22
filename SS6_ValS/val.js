@@ -23,23 +23,3 @@ let sphere = [];
 let ctime = 0;
 let ptime = 0;
 let timer = 500;
-
-/*
-function setup ()
-{
-
-    createCanvas (1000, 1000, WEBGL);
-
-}
-
-function draw ()
-{
-
-    ctime = millis();
-    
-    background (10);
-    noFill ();
-    stroke (10, 200, 10);
-    sphere (400);
-}
-*/
