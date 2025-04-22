@@ -16,7 +16,7 @@ No keys need to be pressed, sit back and relax for this time around.
 
 /* ARRAYS */
 let arrayVal = [];
-let spheres = [];
+let sphere = [];
 
 /* TIMER VAR'S */
 let ctime = 0;
@@ -35,6 +35,9 @@ function draw ()
 
     ctime = millis();
     
-
+    background (10);
+    noFill ();
+    stroke (10, 200, 10);
+    sphere (400);
 }
 
