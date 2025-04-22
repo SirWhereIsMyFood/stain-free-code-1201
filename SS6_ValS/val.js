@@ -19,10 +19,12 @@ let arrayVal = [];
 let sphere = [];
 
 /* TIMER VAR'S */
+
 let ctime = 0;
 let ptime = 0;
-let timer = 1500;
+let timer = 500;
 
+/*
 function setup ()
 {
 
@@ -40,4 +42,4 @@ function draw ()
     stroke (10, 200, 10);
     sphere (400);
 }
-
+*/
