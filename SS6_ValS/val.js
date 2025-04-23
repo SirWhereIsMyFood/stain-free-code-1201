@@ -43,7 +43,7 @@ let swsize = 0
 function preload ()
 {
 
-    myFont = loadFont ('font/TooMuchInk.ttf');
+    myFont = loadFont ('font/TooMuchInk.ttf'); /* FONT */
 
 }
 
@@ -54,14 +54,12 @@ function setup ()
     textSize (50);
     textAlign (CENTER, CENTER);
 
-    for (let i = 4; i <= 12; i ++)
+    for (let i = 4; i <= 12; i ++)  /* make array values from 4 - 12, (mainly used demo as the refrence) */
     {
         arrayVal[i - 4] = pow (i, 2);
 
         print("Sphere rad" + (i - 4) + " ] = " + arrayVal[i - 4]);
     }
-
-    
 
     /* Creating different sphere's object scales, colors and movement. */
     /*
@@ -79,7 +77,7 @@ function setup ()
 
 function draw ()
 {
-    let angle = frameCount * 0.01;
+    let angle = frameCount * 0.01; 
     ctime = millis ();
     background (10);
 
@@ -103,22 +101,22 @@ function draw ()
     background (bs, gs, rs);
     for (let i = 0; i <= windowWidth; i++) 
     {
-        for (let j = 0; j < 1; j++)
-    {
+        for (let y = 0; y < 1; y++)
+    { /* sphere placement, (had to use another nest loop when it comes to translating it, bc it would not work.) */
         push();
     rotateY (angle);
     noFill ();
-    translate (i * 70, j);
+    translate (i * 70, y);
     stroke (rs, gs, bs);
     sphere (100);
     pop();
     }
 }
-
+        /* text location */
         push();
         fill (255);
         textFont (myFont);
-        text (" hey!" + message[positionMessage], width/10, height/4);
+        text (" hey!" + message[positionMessage], width/10, height/4); 
         pop();
 
 }
