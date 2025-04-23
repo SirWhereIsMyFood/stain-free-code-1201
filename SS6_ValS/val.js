@@ -12,13 +12,17 @@ that I had in mind.
 
 No keys need to be pressed, sit back and relax for this time around.
 
+
+refs:
+https://editor.p5js.org/doulcks/sketches/BkhiUkAfe
+https://editor.p5js.org/amcc/sketches/FiNt9_po
 */
 
 /* ARRAYS */
 let arrayVal = [];
 
-let message = [];
-
+let message = [" enjoy the time ", " immerse yourself! ", " take a break, sit back and relax ", " enjoy the show!"];
+let positionMessage = 0;
 
 /* TIMER VAR'S */
 let ctime = 0;
@@ -82,19 +86,29 @@ function draw ()
 
         print ("current time : " + ctime);
         print ("ArrayV value is: " + arrayVal);
+
+        positionMessage = int(random(0, message.length));
     }
 
     background (bs, gs, rs);
+    for (let i = 0; i <= windowWidth; i++) 
+    {
+        for (let y = 0; y < 1; y++)
+    {
+        push();
     rotateY (angle);
     noFill ();
+    translate (i * 70, y);
     stroke (rs, gs, bs);
-    //strokeWeight (random(0, 10));
     sphere (100);
-
-    push();
-    fill (0);
-    strokeWeight (5);
-    text (' Welcome ', 100, 100);
     pop();
+    }
+}
+
+        push();
+        fill (255);
+        translate (500, 500);
+        text (" hey! " + message[positionMessage] + ".", width/2, height/4);
+        pop();
 
 }
