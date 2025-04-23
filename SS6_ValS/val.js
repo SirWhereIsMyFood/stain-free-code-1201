@@ -16,7 +16,9 @@ No keys need to be pressed, sit back and relax for this time around.
 
 /* ARRAYS */
 let arrayVal = [];
-let spheres = [];
+
+let message = [];
+
 
 /* TIMER VAR'S */
 let ctime = 0;
@@ -28,12 +30,15 @@ let rs = 0;
 let gs = 0;
 let bs = 0;
 
+/* STROKE WEIGHT VAR */
 let swsize = 0
 
 function setup ()
 {
 
-    createCanvas (1000, 1000, WEBGL);
+    createCanvas (windowWidth, windowHeight, WEBGL);
+    textSize (50);
+    textAlign (CENTER, CENTER);
 
     for (let i = 4; i <= 12; i ++)
     {
@@ -41,6 +46,8 @@ function setup ()
 
         print("Sphere rad" + (i - 4) + " ] = " + arrayVal[i - 4]);
     }
+
+    
 
     /* Creating different sphere's object scales, colors and movement. */
     /*
@@ -83,5 +90,11 @@ function draw ()
     stroke (rs, gs, bs);
     //strokeWeight (random(0, 10));
     sphere (100);
+
+    push();
+    fill (0);
+    strokeWeight (5);
+    text (' Welcome ', 100, 100);
+    pop();
 
 }
