@@ -25,7 +25,7 @@ let message = [" enjoy the time. ", " immerse yourself! ", " take a break, sit b
 let positionMessage = 0;
 
 /* LOAD FONT */
-let myFont;
+let myFont; /* must use a font in WEBGL, the standard 2D p5 will not work. */
 
 /* TIMER VAR'S */
 let ctime = 0;
