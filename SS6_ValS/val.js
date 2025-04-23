@@ -21,12 +21,14 @@ let spheres = [];
 /* TIMER VAR'S */
 let ctime = 0;
 let ptime = 0;
-let timer = 500;
+let timer = 2000;
 
 /* STROKE VAR'S */
-let rs = random (50, 200);
-let gs = random (50, 200);
-let bs = random (50, 200);
+let rs = 0;
+let gs = 0;
+let bs = 0;
+
+let swsize = 0
 
 function setup ()
 {
@@ -56,12 +58,30 @@ function setup ()
 
 function draw ()
 {
-
+    let angle = frameCount * 0.01;
+    ctime = millis ();
     background (10);
 
+    if (ctime - ptime >= timer)
+    {
+
+        ptime = ctime
+
+        rs = arrayVal [int(random(arrayVal.length))];
+        gs = arrayVal [int(random(arrayVal.length))];
+        bs = arrayVal [int(random(arrayVal.length))];
+
+        strokeWeight (random(0, 10));
+
+        print ("current time : " + ctime);
+        print ("ArrayV value is: " + arrayVal);
+    }
+
+    background (bs, gs, rs);
+    rotateY (angle);
     noFill ();
-    stroke (0, 200, 0);
+    stroke (rs, gs, bs);
+    //strokeWeight (random(0, 10));
     sphere (100);
-    
 
 }
