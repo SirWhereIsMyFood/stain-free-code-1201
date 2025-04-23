@@ -21,8 +21,11 @@ https://editor.p5js.org/amcc/sketches/FiNt9_po
 /* ARRAYS */
 let arrayVal = [];
 
-let message = [" enjoy the time ", " immerse yourself! ", " take a break, sit back and relax ", " enjoy the show!"];
+let message = [" enjoy the time. ", " immerse yourself! ", " take a break, sit back and relax. ", " enjoy the show!"];
 let positionMessage = 0;
+
+/* LOAD FONT */
+let myFont;
 
 /* TIMER VAR'S */
 let ctime = 0;
@@ -36,6 +39,13 @@ let bs = 0;
 
 /* STROKE WEIGHT VAR */
 let swsize = 0
+
+function preload ()
+{
+
+    myFont = loadFont ('font/TooMuchInk.ttf');
+
+}
 
 function setup ()
 {
@@ -93,12 +103,12 @@ function draw ()
     background (bs, gs, rs);
     for (let i = 0; i <= windowWidth; i++) 
     {
-        for (let y = 0; y < 1; y++)
+        for (let j = 0; j < 1; j++)
     {
         push();
     rotateY (angle);
     noFill ();
-    translate (i * 70, y);
+    translate (i * 70, j);
     stroke (rs, gs, bs);
     sphere (100);
     pop();
@@ -107,8 +117,8 @@ function draw ()
 
         push();
         fill (255);
-        translate (500, 500);
-        text (" hey! " + message[positionMessage] + ".", width/2, height/4);
+        textFont (myFont);
+        text (" hey!" + message[positionMessage], width/10, height/4);
         pop();
 
 }
