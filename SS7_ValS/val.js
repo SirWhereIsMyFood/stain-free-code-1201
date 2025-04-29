@@ -44,6 +44,7 @@ function draw ()
   for (let i = 0; i < machines.length; i++)
   {
     machines[i].disp();
+    machines[i].time();
   }
 
 }
@@ -58,10 +59,16 @@ class Vending
     this.w = width;
     this.h = height;
     this.size = 100;
+    this.dia = 15;
 
     this.squareFill = ['0', '0', '0', '300'];
     this.vendingFill = ['10', '10', '10'];
     this.panelFill = ['200', '200', '245'];
+    this.buttonFill = ['226', '226', '226'];
+
+    this.ctime = 0;
+    this.ptime = 0;
+    this.timer = 1500;
   }
 
   disp ()
@@ -84,6 +91,29 @@ class Vending
     fill (this.panelFill);
     rect (this.x + 50, this.y + 25, this.w / 7, this.h / 2.25);
     pop ();
+
+    /* now onto the buttons */
+    push ();
+    fill (this.buttonFill);
+    ellipse (this.x + 275, this.y + 275, this.dia, this.dia);
+    ellipse (this.x + 290, this.y + 275, this.dia, this.dia);
+    ellipse (this.x + 275, this.y + 290, this.dia, this.dia);
+    ellipse (this.x + 290, this.y + 290, this.dia, this.dia);
+    pop ();
   }
 
+  time ()
+  {
+    this.ctime = millis();
+
+    if (this.ctime - this.ptime >= this.timer)
+    {
+
+      this.ptime = this.ctime;
+
+      this.buttonFill[0] = random(20, 170);
+      this.buttonFill[1] = random (15, 190);
+      this.buttonFill[2] = random (20, 166);
+    }
+  }
 }
