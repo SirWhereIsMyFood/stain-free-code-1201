@@ -18,6 +18,8 @@ function setup ()
 
   createCanvas (windowWidth, windowHeight);
 
+  /* intializing vending machine  */
+
 }
 
 function draw ()
@@ -34,17 +36,35 @@ class Vending
   {
     this.x = tX;
     this.y = tY;
+    this.w = width;
+    this.h = height;
+    this.size = 50;
 
+    this.squareFill = ['0', '0', '0', '300'];
+    this.vendingFill = ['10', '10', '10'];
+    this.panelFill = ['200', '200', '245'];
   }
 
   disp ()
   {
     /* Doing the legs/stands first */
-    push();
-    fill (0, 0, 0, 300);
-    
-    pop();
+    push ();
+    fill (this.squareFill);
+    square (this.x + 25, this.y, this.size);
+    square (this.x + 100, this.y, this.size);
+    pop ();
 
+    /* Now focus on the body of the vending machine */
+    push ();
+    fill (this.vendingFill);
+    rect (this.x + 25, this.y, this.w / 3, this.h / 1.5);
+    pop ();
+
+    /* This is the panel (the window displaying items) */
+    push ();
+    fill (this.panelFill);
+    rect (this.x + 25, this.y, this.w / 4, this.h / 1.75);
+    pop ();
   }
 
 }
