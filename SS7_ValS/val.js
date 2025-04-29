@@ -18,14 +18,18 @@ function setup ()
 
   createCanvas (windowWidth, windowHeight);
 
-  /* intializing vending machine  */
+  /* intializing vending machine in setup by calling it's class name & constructor */
+  vending1 = new Vending (100, 250);
+  vending2 = new Vending (400, 450);
 
 }
 
 function draw ()
 {
+  background (200);
 
-
+  vending1.disp();
+  vending2.disp();
 
 }
 
