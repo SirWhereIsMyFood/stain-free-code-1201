@@ -104,6 +104,7 @@ class Vending
 
   time ()
   {
+    /* having a timer to change button colors */
     this.ctime = millis();
 
     if (this.ctime - this.ptime >= this.timer)
