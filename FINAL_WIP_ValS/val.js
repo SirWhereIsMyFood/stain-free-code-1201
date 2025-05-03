@@ -23,11 +23,40 @@ CONTROLS:
 
 */
 
-function setup() {
-  noCanvas();
+let state = "titlescreen"; /* This needs a title screen to take to a controls and start section */
+let buttons;
 
-  // Create the video capture.
-  createCapture(VIDEO);
+function setup ()
+{
 
-  describe('A video stream from the webcam.');
+  createCanvas (windowWidth, windowHeight);
+  background (27);
+
 }
+
+function draw ()
+{
+
+  if (state == "titlescreen")
+  {
+    titleScreen();
+  }
+
+}
+
+function titleScreen ()
+{
+
+  background (27);
+
+  push();
+  fill (106, 60, 239);
+  textAlign (CENTER, TOP);
+  textSize (90);
+  textStyle (BOLD);
+  textFont ('Verdana');
+  text (" Welcome to the Light Show! ", width/2, height/10);
+  pop();
+
+}
+
