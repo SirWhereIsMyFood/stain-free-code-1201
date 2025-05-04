@@ -50,13 +50,22 @@ function titleScreen ()
   background (27);
 
   push();
+  windowResized();
   fill (106, 60, 239);
   textAlign (CENTER, TOP);
-  textSize (90);
+  textSize (60);
   textStyle (BOLD);
   textFont ('Verdana');
-  text (" Welcome to the Light Show! ", width/2, height/10);
+  text (" Welcome to the Light Show Experience! ", windowWidth/2, windowHeight/10);
   pop();
 
+  //for (let y = 0)
+
+}
+
+function windowResized ()
+{
+  resizeCanvas (windowWidth, windowHeight);
+  background (27);
 }
 
