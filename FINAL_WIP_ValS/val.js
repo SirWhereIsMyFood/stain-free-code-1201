@@ -26,12 +26,16 @@ CONTROLS:
 let state = "titlescreen"; /* This needs a title screen to take to a controls and start section */
 let buttons;
 
+/*
 let RColorChange = 106;
   let GColorChange = 60
   let BColorChange = 239;
-  let rFade = 1;
-  let gInvert = 1;
-  let bFade = 2;
+  let rFade = ['1', '2', '3'];
+  let gInvert = ['1', '2', '3'];
+  let bFade = ['1', '2', '3'];
+  */
+ let colorChanges = ['106', '60', '239'];
+ let FadeAndInverts = ['2', '2', '2'];
 
 function setup ()
 {
@@ -60,20 +64,31 @@ function titleScreen ()
   
   windowResized();
   /* fill (106 + colorInvert, 60 - colorFade, 239 + colorInvert); */
-  fill (RColorChange, GColorChange, BColorChange );
+  fill (colorChanges);
   textAlign (CENTER, TOP);
   textSize (60);
   textStyle (BOLD);
   textFont ('Verdana');
   text (" Welcome to the Light Show Experience! ", windowWidth/2, windowHeight/10);
   
+  /*
   RColorChange = RColorChange + rFade;
   GColorChange = GColorChange - gInvert;
   BColorChange = BColorChange + bFade;
+  */
+  colorChanges[0] = colorChanges[0] + FadeAndInverts[0];
+  colorChanges[1] = colorChanges[1] + FadeAndInverts[1];
+  colorChanges[2] = colorChanges[2] + FadeAndInverts[2];
 
-  //if (RColorChange )
+  if (colorChanges[0] >= 255 || colorChanges[0] <= 0)
   {
-
+    if (colorChanges[1] <= 0 || colorChanges[1] >= 255)
+    {
+      if (colorChanges[2] >= 255 || colorChanges[2] <= 0)
+      {
+       // FadeAndInverts[0, 1, 2] = -FadeAndInverts[0, 1, 2];
+      }
+    }
   }
 
   pop();
