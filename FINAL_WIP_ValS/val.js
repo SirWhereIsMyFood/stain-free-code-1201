@@ -19,7 +19,7 @@ me as I try to find the right idea/themes along the way.
 And yes, I have moved on from the vending machine, I think I wanna do something more creative that I
 haven't really done yet.
 
-CONTROLS:
+SOURCES & CREDITS:
 
 */
 
@@ -51,9 +51,8 @@ function titleScreen ()
 {
   
   background (27);
-
   push();
-  
+
   windowResized();
   colorMode (HSB);
   fill (TitleColorChanges);
@@ -61,7 +60,7 @@ function titleScreen ()
   textSize (60);
   textStyle (BOLD);
   textFont ('Verdana');
-  text (" Welcome to the Light Show Experience! ", windowWidth/2, windowHeight/10);
+  text (" Welcome to the Light Show Experience! ", windowWidth / 2, windowHeight / 10);
   
   TitleColorChanges[0] = TitleColorChanges[0] - FadeAndInverts[0];
   TitleColorChanges[1] = TitleColorChanges[1] - FadeAndInverts[1];
@@ -80,10 +79,14 @@ function titleScreen ()
     }
   }
   print ("the value is: " + TitleColorChanges);
-
   pop();
 
-  //for (let y = 0)
+  for (let y = windowHeight / 2.5; y < windowHeight / 1.25; y += 250)
+  {
+    noFill();
+    rectMode (CENTER);
+    rect (windowWidth / 2, y, windowWidth / 3, windowHeight / 4);
+  }
 
 }
 
