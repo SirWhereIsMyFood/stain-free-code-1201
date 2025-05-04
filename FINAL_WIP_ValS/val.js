@@ -34,7 +34,6 @@ function setup ()
 
   createCanvas (windowWidth, windowHeight);
   background (27);
-
 }
 
 function draw ()
@@ -79,7 +78,7 @@ function titleScreen ()
   textSize (60);
   textStyle (BOLD);
   textFont ('Verdana');
-  text (" Welcome to the Light Show Experience! ", windowWidth / 2, windowHeight / 10);
+  text (" Welcome to a 'Light Show' Experience! ", windowWidth / 2, windowHeight / 10);
   
   TitleColorChanges[0] = TitleColorChanges[0] - FadeAndInverts[0];
   TitleColorChanges[1] = TitleColorChanges[1] - FadeAndInverts[1];
@@ -114,12 +113,18 @@ function titleScreen ()
   text (" Start the show ", windowWidth / 2.5, windowHeight / 2.5);
   text (" Controls & Interactions ", windowWidth / 2.7, windowHeight / 2.5 + 270);
   pop();
-
 }
 
 function controls ()
 {
+  background (27);
 
+  textAlign (CENTER, TOP);
+}
+
+function boot ()
+{
+  background (27);
 }
 
 function windowResized ()
@@ -130,6 +135,16 @@ function windowResized ()
 
 function mousePressed ()
 {
-
+  if (state == "titlescreen")
+  {
+    if (mouseX > windowWidth / 2 - 240 && mouseX < windowWidth / 2 + 240 && mouseY > windowHeight / 4 + 270 && mouseY < windowHeight / 4 + 450)
+    {
+      state = "controls"
+    }
+    else if (mouseX > windowWidth / 2 - 240 && mouseX < windowWidth / 2 + 240 && mouseY > windowHeight / 4 + 15 && mouseY < windowHeight / 4 + 200)
+    {
+      state = "boot"
+    }
+  }
 }
 
