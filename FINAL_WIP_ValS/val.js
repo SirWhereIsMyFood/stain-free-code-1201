@@ -26,6 +26,13 @@ CONTROLS:
 let state = "titlescreen"; /* This needs a title screen to take to a controls and start section */
 let buttons;
 
+let RColorChange = 106;
+  let GColorChange = 60
+  let BColorChange = 239;
+  let rFade = 1;
+  let gInvert = 1;
+  let bFade = 2;
+
 function setup ()
 {
 
@@ -46,17 +53,29 @@ function draw ()
 
 function titleScreen ()
 {
-
+  
   background (27);
 
   push();
+  
   windowResized();
-  fill (106, 60, 239);
+  /* fill (106 + colorInvert, 60 - colorFade, 239 + colorInvert); */
+  fill (RColorChange, GColorChange, BColorChange );
   textAlign (CENTER, TOP);
   textSize (60);
   textStyle (BOLD);
   textFont ('Verdana');
   text (" Welcome to the Light Show Experience! ", windowWidth/2, windowHeight/10);
+  
+  RColorChange = RColorChange + rFade;
+  GColorChange = GColorChange - gInvert;
+  BColorChange = BColorChange + bFade;
+
+  //if (RColorChange )
+  {
+
+  }
+
   pop();
 
   //for (let y = 0)
