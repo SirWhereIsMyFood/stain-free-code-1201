@@ -44,7 +44,26 @@ function draw ()
   {
     titleScreen();
   }
-
+  else if (state == "controls")
+  {
+    controls();
+  }
+  else if (state == "boot")
+  {
+    boot();
+  }
+  else if (state == "2D")
+  {
+    TwoDimensional();
+  }
+  else if (state == "3D")
+  {
+    ThreeDimensional();
+  }
+  else if (state == "show over")
+  {
+    showOver();
+  }
 }
 
 function titleScreen ()
@@ -92,10 +111,14 @@ function titleScreen ()
   fill (255);
   textSize (35);
   textStyle (ITALIC);
-
-  text (" Start the show ", windowWidth / 2.5, windowHeight / 2.5)
+  text (" Start the show ", windowWidth / 2.5, windowHeight / 2.5);
   text (" Controls & Interactions ", windowWidth / 2.7, windowHeight / 2.5 + 270);
   pop();
+
+}
+
+function controls ()
+{
 
 }
 
