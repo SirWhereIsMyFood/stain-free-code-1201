@@ -119,7 +119,11 @@ function controls ()
 {
   background (27);
 
+  fill (255);
   textAlign (CENTER, TOP);
+  textSize (100);
+  textStyle (BOLDITALIC);
+  text (" Controls And Interactions ", windowWidth / 2, windowHeight / 10);
 }
 
 function boot ()
@@ -146,5 +150,6 @@ function mousePressed ()
       state = "boot"
     }
   }
+ 
 }
 
