@@ -68,7 +68,7 @@ let graphix;
 function setup ()
 {
 
-  createCanvas (windowWidth, windowHeight);
+  createCanvas (windowWidth, windowHeight, WEBGL);
   background (27);
 
   for (let i = 4; i <= 12; i ++)  /* make array values from 4 - 12, (mainly used demo as the refrence) */
@@ -214,12 +214,11 @@ function startUp ()
 
 function ThreeDimensional ()
 {
-  graphix = createGraphics (windowWidth, windowHeight, WEBGL);
-  graphix.background (27);
+  
+  background (27);
 
-  graphix.angle = frameCount * 0.01; 
+  let angle = frameCount * 0.01; 
     ctime = millis ();
-    background (10);
 
     if (ctime - ptime >= timer)
     {
@@ -251,10 +250,9 @@ function ThreeDimensional ()
     sphere (100);
     pop();
     }
+    
 }
         
-
-  
 }
 
 function windowResized ()
@@ -289,5 +287,9 @@ function keyPressed ()
   if (key === "3")
   {
     state = "3D"
+  }
+  if (key === "p" || key === "P" && state == "3D")
+  {
+    saveCanvas ('Highlight.png');
   }
 }
