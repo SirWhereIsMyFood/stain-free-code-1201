@@ -218,8 +218,11 @@ w.setup = function()
         }
         else if (mouseX > windowWidth / 2 - 240 && mouseX < windowWidth / 2 + 240 && mouseY > windowHeight / 4 + 15 && mouseY < windowHeight / 4 + 200)
         {
-          state = "startup"
-        }
+          fill (255);
+          textSize (20);
+          textStyle (BOLDITALIC);
+          text (" currently under construction ", windowWidth / 1.5, windowHeight / 2.5);
+        } 
 
  }
  
