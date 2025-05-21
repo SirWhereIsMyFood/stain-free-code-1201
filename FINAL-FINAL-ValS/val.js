@@ -121,7 +121,33 @@ w.setup = function()
         w.rotateY (w.angle);
         w.noFill ();
         w.translate (w.i * 70, w.y);
-        w.translate (w.noise(w.xOff)*100, w.noise(w.yOff)*w.height*0.01, w.noise(w.zOff)*600)
+        w.translate (w.noise(w.xOff++)*100, w.noise(w.yOff++)*w.height*0.01, w.noise(w.zOff++)*600)
+
+          if (w.xOff > 1000)
+          {
+            w.xOff--;
+          }
+          else if (w.xOff <= 0)
+          {
+            w.xOff++
+          }
+          if (w.yoff > 100)
+          {
+            w.yOff--;
+          }
+          else if (w.yoff <= 0)
+          {
+            w.yOff++;
+          }
+          if (w.zOff > 5000)
+          {
+            w.zOff--;
+          }
+          else if (w.zOff <= 0)
+          {
+            w.zOff++;
+          }
+
         w.stroke (w.rs, w.gs, w.bs);
         w.sphere (100);
         w.pop();
